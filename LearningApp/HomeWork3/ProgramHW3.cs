@@ -4,7 +4,7 @@ namespace LearningApp
 {
     class ProgramHW3
     {
-        static void Main(string[] args)
+        static void MainHW3(string[] args)
         {
             
             //*** TASK1
