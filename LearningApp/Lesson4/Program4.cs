@@ -11,23 +11,29 @@ namespace LearningApp
             //static void vs public void?
             //for cikle uzvadinant pradine operacija naudojam viena raide indeksui
             //is eiles (i, j, k, m, n). LOKALUS KINTAMASIS
-           
+
             /*
             for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine(i);
             }
-           */
+           //*/
 
             //uzduotys FOR ciklui
-            
-            /*Console.WriteLine("task1");
+
+
+            /////////TASK1///////////////
+            /*
+            Console.WriteLine("task1");
             for (int i = 0; i <= 20; i+=3)
             {
                 Console.WriteLine(i);
             }
             Console.ReadLine();
+            //*/
 
+            /////////TASK2///////////////
+            /*
             Console.WriteLine("task2");
             Console.WriteLine("Enter low limit:");
             int no1 = Convert.ToInt32(Console.ReadLine());
@@ -46,8 +52,9 @@ namespace LearningApp
                 }
             }
             Console.ReadLine();
-            */
+            //*/
 
+            /////////TASK3///////////////
             /*
             Console.WriteLine("task3");
             int sum = 0;
@@ -59,11 +66,10 @@ namespace LearningApp
                 }
             }
             Console.WriteLine("Sum = {0}", sum);
-            
-            //variantas su ($"Sum = {sum}, sum) ???
+            //*/
 
-            //ciklas WHILE. naudojam kai nezinom pradzios ir pabaigos
-            
+            //////////WHILE. naudojam kai nezinom pradzios ir pabaigos
+            /*
             int nr = 0;
             while (nr < 10)
             {
@@ -73,13 +79,13 @@ namespace LearningApp
             */
 
 
-            //task4
+            /////////TASK4///////////////
             /*
             Console.WriteLine("task4");
             Console.WriteLine("Choose from three drinks by entering their number: \n 1 Coffee \n 2 Tea \n 3 Water");
             int input = Convert.ToInt32(Console.ReadLine());
         
-                while (input > 3)
+                while (input > 3 || input < 1)
                 {
                     Console.WriteLine("bad input, try again:");
                     input = Convert.ToInt32(Console.ReadLine());
@@ -107,14 +113,23 @@ namespace LearningApp
                 Console.WriteLine("input:");
                 input1 = Convert.ToInt32(Console.ReadLine());
 
-            } while (input1 > 3);
-            
-            
-            //!!!nebaigta!!!!
-            */
+            } while (input1 > 3 || input1 < 1);
+            switch (input1)
+            {
+                case 1:
+                    Console.WriteLine("you chose 1");
+                    break;
+                case 2:
+                    Console.WriteLine("you chose 2");
+                    break;
+                default:
+                    Console.WriteLine("you chose 3");
+                    break;
+            }
 
-            //task lektuvas
-            //Console.WriteLine("task plane");
+            //*/
+
+            /////////TASK5///////////////
             /*
             const int planeSeats = 8;
             const int planeSeatsWindow = 4;
@@ -140,17 +155,16 @@ namespace LearningApp
                 }
                     allSeatsTaken++;
                 }
-            */
+            //*/
 
 
             //paskutiniai uzdaviniai
             /*
             int sum = 0;
-            Console.WriteLine(sum);
+            //Console.WriteLine(sum);
             int i = 0;
             for (; ; )  
             {
-
                 if (i % 5 == 0)
                 {
                     i++;
@@ -159,12 +173,11 @@ namespace LearningApp
                 if (i > 123)
                 { break; } 
                     
-                
-                sum += i;
-                i++;
+              sum += i;
+              i++;
             }
               Console.WriteLine("Sum = {0}", sum);
-            */
+            //*/
 
         }
     }
