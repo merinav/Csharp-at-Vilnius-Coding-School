@@ -179,6 +179,36 @@ namespace LearningApp
               Console.WriteLine("Sum = {0}", sum);
             //*/
 
+            ////////PAPILDOMA UZDUOTIS///////////
+            ////////SPEJIMAI/////////////
+            ///*
+            Console.WriteLine("Task: guess the number");
+            int number = new Random().Next(0, 100);
+            Console.WriteLine("Guess the number, enter your guess:");
+            int guess = Convert.ToInt32(Console.ReadLine());
+            int guessCount = 0;
+                       
+            while (guess != number)
+            {
+                if (guess > number)
+                {
+                    Console.WriteLine("your guess is bigger, try again:");
+                    guess = Convert.ToInt32(Console.ReadLine());
+                    guessCount++;
+                    continue;
+                }
+                else
+                {
+                    Console.WriteLine("your guess is smaller, try again:");
+                    guess = Convert.ToInt32(Console.ReadLine());
+                    guessCount++;
+                    continue;
+                }
+            }
+            guessCount++;
+            Console.WriteLine("Your guess is correct, you have tried {0} times.", guessCount);
+
+
         }
     }
 }
