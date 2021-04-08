@@ -4,7 +4,7 @@ namespace LearningApp
 {
     class Program4
     {
-        static void Main(string[] args)
+        static void Main4(string[] args)
         {
             //CIKLAI
             //FOR: kai suskaiciuojamas/zinomas kartojimu skaicius. 
