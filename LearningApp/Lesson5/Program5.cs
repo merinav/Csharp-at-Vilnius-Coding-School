@@ -179,7 +179,7 @@ namespace LearningApp
         }
 
 
-        ///////////////////////////GUESS THE NUMBER DONE (NO BOOL)
+        ///////////////////////////GUESS THE NUMBER DONE 
         static void Task4GuessNumber()
         {
             int number = new Random().Next(0, 100);
@@ -187,25 +187,34 @@ namespace LearningApp
             int guess = Convert.ToInt32(Console.ReadLine());
             int guessCount = 0;
 
-            while (guess != number)
+            bool isAnswerGuessed = true;
+
+            do
             {
                 if (guess > number)
                 {
+                    isAnswerGuessed = false;
                     Console.WriteLine("your guess is bigger, try again:");
                     guess = Convert.ToInt32(Console.ReadLine());
                     guessCount++;
                     continue;
                 }
-                else
+                else if (guess < number)
                 {
+                    isAnswerGuessed = false;
                     Console.WriteLine("your guess is smaller, try again:");
                     guess = Convert.ToInt32(Console.ReadLine());
                     guessCount++;
                     continue;
+                } else
+                {
+                    isAnswerGuessed = true;
+                    break;
                 }
-            }
+            } while (!isAnswerGuessed);
             guessCount++;
             Console.WriteLine("Your guess is correct, you have tried {0} times.", guessCount);
+            
 
         }
 
@@ -373,6 +382,12 @@ namespace LearningApp
             }
         }
 
+        ///////////////////////////FIBERNATI
+        static void Task12Fibonacci()
+        {
+           
+
+        }
 
 
 
