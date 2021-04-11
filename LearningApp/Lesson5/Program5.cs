@@ -4,7 +4,7 @@ namespace LearningApp
 {
     class Program5
     {
-        static void Main()
+        static void Main5()
         {
             //pilnas funkcijos aprasas:
             //<static or not> <access specifier> <return type> <method name> (<parameters>)
