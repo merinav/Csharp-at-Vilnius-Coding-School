@@ -15,13 +15,13 @@ namespace LearningApp
 
         static void Begin9To9()
         {
-            string input = GetInput();
-            if (CheckIfNumber(input, CheckIfNumberIsNegative(input)))
+            string input = GetInput9To9();
+            if (CheckIfNumber9To9(input, CheckIfNumberIsNegative9To9(input)))
             {
-                int inputNumber = ConvertStringToInt(input);
-                if (CheckIfNumberIsBetweenParameters(inputNumber))
+                int inputNumber = ConverStringToInt9To9(input);
+                if (CheckIfBetweenParameters9To9(inputNumber))
                 {                    
-                    Console.WriteLine("Skaicius zodziais:" + " " +ConvertNumberToText(inputNumber) + ".");
+                    Console.WriteLine("Skaicius zodziais:" + " " +ConvertToText9To9(inputNumber) + ".");
                 }
                 else
                 {
@@ -34,13 +34,13 @@ namespace LearningApp
             }
         }
 
-        static string GetInput()
+        static string GetInput9To9()
         {
             Console.WriteLine("Iveskite skaiciu nuo -9 iki 9:");
             return Console.ReadLine();
         }
 
-        static bool CheckIfNumberIsNegative(string input)
+        static bool CheckIfNumberIsNegative9To9(string input)
         {
             bool isNumberNegative;
             char a = input[0];
@@ -48,7 +48,7 @@ namespace LearningApp
             return isNumberNegative;
         }
 
-        static bool CheckIfNumber(string input, bool isNumberNegative)
+        static bool CheckIfNumber9To9(string input, bool isNumberNegative)
         {
             bool isInputNumber = true;
             if (isNumberNegative)
@@ -70,13 +70,13 @@ namespace LearningApp
             return isInputNumber;
         }
 
-        static int ConvertStringToInt(string input)
+        static int ConverStringToInt9To9(string input)
         {
             int inputNumber = Convert.ToInt32(input);
             return inputNumber;
         }
 
-        static bool CheckIfNumberIsBetweenParameters(int inputNumber)
+        static bool CheckIfBetweenParameters9To9(int inputNumber)
         {
             bool betweenParameters;
             if (inputNumber >= -9 && inputNumber <= 9)
@@ -88,7 +88,7 @@ namespace LearningApp
             return betweenParameters;
         }
 
-        static string ConvertNumberToText (int inputNumber)
+        static string ConvertToText9To9 (int inputNumber)
         {
             string numberInText = "";
             switch (inputNumber)
@@ -154,6 +154,21 @@ namespace LearningApp
             }                                         
             return numberInText;
         }
+
+        //////////////19-19/////////////
+
+        static void Begin19To19()
+        { 
+        
+        }
+
+        //static string GetInputFor19To19()
+        //{ 
+        //}
+
+
+
+
 
     }
 }
