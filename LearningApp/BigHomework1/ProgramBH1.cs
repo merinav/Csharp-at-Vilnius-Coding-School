@@ -6,57 +6,68 @@ namespace LearningApp
     {
         static void Main(string[] args)
         {
-            
-            //Sukurti funkciją, kuri ima int skaičių
-            //ir grąžina string -skaičių žodžiais
-            //PVZ: Vartotojas iveda: “19854” 
-            //sukurti funkciją, kuri gali atspausdinti skaičius nuo - 19 … 19 žodžiais
-            Begin();
-            
+            Begin9To9();
         }
 
-        static void Begin()
+
+        //su rankiniu switch
+        //jei ivestas pvz 06, laikyas kad ok ir duos "sesi"
+
+        static void Begin9To9()
         {
             string input = GetInput();
-            if (CheckIfNumber(input))
+            if (CheckIfNumber(input, CheckIfNumberIsNegative(input)))
             {
                 int inputNumber = ConvertStringToInt(input);
                 if (CheckIfNumberIsBetweenParameters(inputNumber))
-                {
-                    Console.WriteLine(ConvertNumberToText(inputNumber));
+                {                    
+                    Console.WriteLine("Skaicius zodziais:" + " " +ConvertNumberToText(inputNumber) + ".");
                 }
                 else
                 {
-                    Console.WriteLine("Your number is not between ");
+                    Console.WriteLine("Jusu ivestas skaicius nera tarp -9 ir 9.");
                 }
             }
             else
             {
-                Console.WriteLine("You did not enter a number");
+                Console.WriteLine("Jus ivedete ne skaiciu.");
             }
-
         }
 
         static string GetInput()
         {
-            Console.WriteLine("Enter any single number from -9 to 9");
+            Console.WriteLine("Iveskite skaiciu nuo -9 iki 9:");
             return Console.ReadLine();
         }
 
-        static bool CheckIfNumber(string input)
+        static bool CheckIfNumberIsNegative(string input)
         {
+            bool isNumberNegative;
+            char a = input[0];
+            isNumberNegative = a.Equals('-');
+            return isNumberNegative;
+        }
 
-            for (int i = 0; i < input.Length; i++)
+        static bool CheckIfNumber(string input, bool isNumberNegative)
+        {
+            bool isInputNumber = true;
+            if (isNumberNegative)
             {
-                bool isInputNumber;
-                char a = input[i];
-                isInputNumber = Char.IsDigit(a);
-                return isInputNumber;
+                for (int i = 1; i < input.Length; i++)
+                {                    
+                    char a = input[i];
+                    isInputNumber = Char.IsDigit(a);
+                }
             }
-            return false;
-            //kaip patikrinti neigiama sk?
-            //??? kaip nedaryti dvieju return? 
-            //for cikle gali buti ir true ir false, bet kodas verkia, jei nera antro return
+            else
+            {
+                for (int i = 0; i < input.Length; i++)
+                {                    
+                    char a = input[i];
+                    isInputNumber = Char.IsDigit(a);                    
+                }
+            }
+            return isInputNumber;
         }
 
         static int ConvertStringToInt(string input)
@@ -66,7 +77,6 @@ namespace LearningApp
         }
 
         static bool CheckIfNumberIsBetweenParameters(int inputNumber)
-            //VEIKIA
         {
             bool betweenParameters;
             if (inputNumber >= -9 && inputNumber <= 9)
@@ -80,9 +90,69 @@ namespace LearningApp
 
         static string ConvertNumberToText (int inputNumber)
         {
-            
-            Console.WriteLine(inputNumber + "blabla");
-            return "bla";
+            string numberInText = "";
+            switch (inputNumber)
+            {
+                case 9:
+                    numberInText = "devyni";
+                    break;
+                case 8:
+                    numberInText = "astuoni";
+                    break;
+                case 7:
+                    numberInText = "septyni";
+                    break;
+                case 6:
+                    numberInText = "sesi";
+                    break;
+                case 5:
+                    numberInText = "penki";
+                    break;
+                case 4:
+                    numberInText = "keturi";
+                    break;
+                case 3:
+                    numberInText = "trys";
+                    break;
+                case 2:
+                    numberInText = "du";
+                    break;
+                case 1:
+                    numberInText = "vienas";
+                    break;
+                case 0:
+                    numberInText = "nulis";
+                    break;
+                case -1:
+                    numberInText = "minus vienas";
+                    break;
+                case -2:
+                    numberInText = "minus du";
+                    break;
+                case -3:
+                    numberInText = "minus trys";
+                    break;
+                case -4:
+                    numberInText = "minus keturi";
+                    break;
+                case -5:
+                    numberInText = "minus 5";
+                    break;
+                case -6:
+                    numberInText = "minus sesi";
+                    break;
+                case -7:
+                    numberInText = "minus septyni";
+                    break;
+                case -8:
+                    numberInText = "minus astuoni";
+                    break;
+                case -9:
+                    numberInText = "minus devyni";
+                    break;
+                default: break;           
+            }                                         
+            return numberInText;
         }
 
     }
