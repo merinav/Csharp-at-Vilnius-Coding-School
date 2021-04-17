@@ -7,14 +7,19 @@ namespace LearningApp
         static void Main(string[] args)
         {
             //Begin9To9();
+            //Begin19To19();
             Begin99To99();
-           
-        }
 
+        }       
 
-        //su rankiniu switch
-        //jei ivestas pvz 06, laikyas kad ok ir duos "sesi"
+        //neispresti klausimai:
+        //jei ivestis tarkim 02, uzskaitys kaip 2, blogai kai ima duomenis is masyvo
+        //19-19 ir 99-99 ivestis tarkim "k8", luzta ties converstringtoint
+        //nors turetu luzt ties checkifnumberXtoX
+        //bet neluzta jei ivestis "8k"
+        //kzkas ne taip su checkifnumberf-ja
 
+        //////////////-9 to 9/////////////
         static void Begin9To9()
         {
             string input = GetInput9To9();
@@ -23,22 +28,22 @@ namespace LearningApp
                 int inputNumber = ConverStringToInt9To9(input);
                 if (CheckIfBetweenParameters9To9(inputNumber))
                 {                    
-                    Console.WriteLine("Skaicius zodziais:" + " " +ConvertToText9To9(inputNumber) + ".");
+                    Console.WriteLine("Skaičius žodžiais:" + " " +ConvertToText9To9(inputNumber) + ".");
                 }
                 else
                 {
-                    Console.WriteLine("Jusu ivestas skaicius nera tarp -9 ir 9.");
+                    Console.WriteLine("Jūsų įvestas skaičius nėra tarp -9 ir 9.");
                 }
             }
             else
             {
-                Console.WriteLine("Jus ivedete ne skaiciu.");
+                Console.WriteLine("Jūs ivedėte ne skaičių.");
             }
         }
-
+        
         static string GetInput9To9()
         {
-            Console.WriteLine("Iveskite skaiciu nuo -9 iki 9:");
+            Console.WriteLine("Iveskite sveiką skaičių nuo -9 iki 9:");
             return Console.ReadLine();
         }
 
@@ -99,6 +104,180 @@ namespace LearningApp
                     numberInText = "devyni";
                     break;
                 case 8:
+                    numberInText = "aštuoni";
+                    break;
+                case 7:
+                    numberInText = "septyni";
+                    break;
+                case 6:
+                    numberInText = "šeši";
+                    break;
+                case 5:
+                    numberInText = "penki";
+                    break;
+                case 4:
+                    numberInText = "keturi";
+                    break;
+                case 3:
+                    numberInText = "trys";
+                    break;
+                case 2:
+                    numberInText = "du";
+                    break;
+                case 1:
+                    numberInText = "vienas";
+                    break;
+                case 0:
+                    numberInText = "nulis";
+                    break;
+                case -1:
+                    numberInText = "minus vienas";
+                    break;
+                case -2:
+                    numberInText = "minus du";
+                    break;
+                case -3:
+                    numberInText = "minus trys";
+                    break;
+                case -4:
+                    numberInText = "minus keturi";
+                    break;
+                case -5:
+                    numberInText = "minus penki";
+                    break;
+                case -6:
+                    numberInText = "minus šeši";
+                    break;
+                case -7:
+                    numberInText = "minus septyni";
+                    break;
+                case -8:
+                    numberInText = "minus aštuoni";
+                    break;
+                case -9:
+                    numberInText = "minus devyni";
+                    break;
+                default: break;           
+            }                                         
+            return numberInText;
+        }
+
+        //////////////-19 to 19/////////////
+
+        static void Begin19To19()
+        {
+            string input = GetInput19To19();
+            if (CheckIfNumber19To19(input, CheckIfNumberIsNegative19To19(input)))
+            {
+                int inputNumber = ConvertStringToInt19To19(input);
+                if (CheckIfBetweenParameters19To19(inputNumber))
+                {
+                    Console.WriteLine("Skaičius žodžiais:" + " " + ConvertToText19To19(inputNumber) + ".");
+                }
+                else
+                {
+                    Console.WriteLine("Jūsų įvestas skaičius nėra tarp -19 ir 19.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Jūs ivedėte ne skaičių.");
+            }
+        }
+
+        static string GetInput19To19()
+        {
+            Console.WriteLine("Iveskite sveiką skaičių nuo -19 iki 19:");
+            return Console.ReadLine();
+        }
+
+        static bool CheckIfNumberIsNegative19To19(string input)
+        {
+            bool isNumberNegative;
+            char a = input[0];
+            isNumberNegative = a.Equals('-');
+            return isNumberNegative;
+        }
+
+        static bool CheckIfNumber19To19(string input, bool isNumberNegative)
+        {
+            bool isInputNumber = true;
+            if (isNumberNegative)
+            {
+                for (int i = 1; i < input.Length; i++)
+                {
+                    char a = input[i];
+                    isInputNumber = Char.IsDigit(a);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < input.Length; i++)
+                {
+                    char a = input[i];
+                    isInputNumber = Char.IsDigit(a);
+                }
+            }
+            return isInputNumber;
+        }
+
+        static int ConvertStringToInt19To19(string input)
+        {
+            int inputNumber = Convert.ToInt32(input);
+            return inputNumber;
+        }
+
+        static bool CheckIfBetweenParameters19To19(int inputNumber)
+        {
+            bool betweenParameters;
+            if (inputNumber >= -19 && inputNumber <= 19)
+            {
+                betweenParameters = true;
+            }
+            else
+                betweenParameters = false;
+            return betweenParameters;
+        }
+
+        static string ConvertToText19To19(int inputNumber)
+        {
+            string numberInText = "";
+            switch (inputNumber)
+            {
+                case 19:
+                    numberInText = "devyniolika";
+                    break;
+                case 18:
+                    numberInText = "astuoniolika";
+                    break;
+                case 17:
+                    numberInText = "septyniolika";
+                    break;
+                case 16:
+                    numberInText = "sesiolika";
+                    break;
+                case 15:
+                    numberInText = "penkiolika";
+                    break;
+                case 14:
+                    numberInText = "keturiolika";
+                    break;
+                case 13:
+                    numberInText = "trylika";
+                    break;
+                case 12:
+                    numberInText = "dvylika";
+                    break;
+                case 11:
+                    numberInText = "vienuolika";
+                    break;
+                case 10:
+                    numberInText = "dešimt";
+                    break;
+                case 9:
+                    numberInText = "devyni";
+                    break;
+                case 8:
                     numberInText = "astuoni";
                     break;
                 case 7:
@@ -138,26 +317,56 @@ namespace LearningApp
                     numberInText = "minus keturi";
                     break;
                 case -5:
-                    numberInText = "minus 5";
+                    numberInText = "minus penki";
                     break;
                 case -6:
-                    numberInText = "minus sesi";
+                    numberInText = "minus šeši";
                     break;
                 case -7:
                     numberInText = "minus septyni";
                     break;
                 case -8:
-                    numberInText = "minus astuoni";
+                    numberInText = "minus aštuoni";
                     break;
                 case -9:
                     numberInText = "minus devyni";
                     break;
-                default: break;           
-            }                                         
+                case -10:
+                    numberInText = "minus dešimt";
+                    break;
+                case -11:
+                    numberInText = "minus vienuolika";
+                    break;
+                case -12:
+                    numberInText = "minus dvylika";
+                    break;
+                case -13:
+                    numberInText = "minus trylika";
+                    break;
+                case -14:
+                    numberInText = "minus keturiolika";
+                    break;
+                case -15:
+                    numberInText = "minus penkiolika";
+                    break;
+                case -16:
+                    numberInText = "minus šešiolika";
+                    break;
+                case -17:
+                    numberInText = "minus septyniolika";
+                    break;
+                case -18:
+                    numberInText = "minus aštuoniolika";
+                    break;
+                case -19:
+                    numberInText = "minus devyniolika";
+                    break;
+                default: break;
+            }
             return numberInText;
         }
 
-        //////////////-99-99/////////////
+        //////////////-99 to 99/////////////
 
         static void Begin99To99()
         {
@@ -170,24 +379,23 @@ namespace LearningApp
                     string first = FirstCharToText(ReturnFirstCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnSecondCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnThirdCharOfArray(ConvertIntToCharArray(inputNumber)));
                     string second = SecondCharToText(ReturnFirstCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnSecondCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnThirdCharOfArray(ConvertIntToCharArray(inputNumber)));
                     string third = ThirdCharToText(ReturnFirstCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnSecondCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnThirdCharOfArray(ConvertIntToCharArray(inputNumber)));
-                    Console.WriteLine(CompileResultText(first, second, third));
-
-                    
+                    Console.WriteLine("Skaičius žodžiais:" + " " + CompileResultText(first, second, third));
+   
                 }
                 else
                 {
-                    Console.WriteLine("Jusu ivestas skaicius nera tarp -99 ir 99.");
+                    Console.WriteLine("Jūsų įvestas skaičius nėra tarp -99 ir 99.");
                 }
             }
             else
             {
-                Console.WriteLine("Jus ivedete ne skaiciu.");
+                Console.WriteLine("Jūs ivedėte ne skaičių.");
             }
         }
 
         static string GetInputFor99To99()
         {
-            Console.WriteLine("Iveskite sveika skaiciu nuo -99 iki 99:");
+            Console.WriteLine("Iveskite sveiką skaičių nuo -99 iki 99:");
             return Console.ReadLine();
         }
 
@@ -249,6 +457,15 @@ namespace LearningApp
                 charArrayNumbersToConvert[i] = a;
             }
             return charArrayNumbersToConvert;
+
+            //List<char> charList = new List<char>() { };
+            //string inputNumber = Convert.ToString(input);
+            //for (int i = 0; i < inputNumber.Length; i++)
+            //{
+            //    char a = inputNumber[i];
+            //    charArrayNumbersToConvert[i] = a;
+            //}
+
         }
 
         static char ReturnFirstCharOfArray(char[] charArrayNumbersToConvert)
@@ -326,50 +543,50 @@ namespace LearningApp
             string first = "";
             if (a != '*' && b != '*' && c !='*')
             {
-                first = "Minus ";
+                first = "minus ";
             }
             else if (a != '*' && b != '*' && c == '*')
             {
                 if (a == '-')
                 {
-                    first = "Minus ";
+                    first = "minus ";
                 }               
                 else if (a == '9')
                 {
-                    first = "Devyniasdesimt ";
+                    first = "devyniasdešimt";
                 }
                 else if (a == '8')
                 {
-                    first = "Astuoniasdesimt ";
+                    first = "aštuoniasdešimt";
                 }
                 else if (a == '7')
                 {
-                    first = "Septyniasdesimt ";
+                    first = "septyniasdešimt";
                 }
                 else if (a == '6')
                 {
-                    first = "Sesiasdesimt ";
+                    first = "šešiasdešimt";
                 }
                 else if (a == '5')
                 {
-                    first = "Penkiasdesimt ";
+                    first = "penkiasdešimt";
                 }
                 else if (a == '4')
                 {
-                    first = "Keturiasdesimt ";
+                    first = "keturiasdešimt";
                 }
                 else if (a == '3')
                 {
-                    first = "Trisdesimt ";
+                    first = "trisdešimt";
                 }
                 else if (a == '2')
                 {
-                    first = "Dvidesimt ";
+                    first = "dvidešimt ";
                 }                
             }
             else if (a == '0')
             {
-                first = "Nulis";
+                first = "nulis";
             }
             return first;            
         }
@@ -381,35 +598,35 @@ namespace LearningApp
             {
                 if (b == '9')
                 {
-                    second = "devyniasdesimt ";
+                    second = "devyniasdešimt";
                 }
                 else if (b == '8')
                 {
-                    second = "astuoniasdesimt ";
+                    second = "aštuoniasdešimt";
                 }
                 else if (b == '7')
                 {
-                    second = "septyniasdesimt ";
+                    second = "septyniasdešimt";
                 }
                 else if (b == '6')
                 {
-                    second = "sesiasdesimt ";
+                    second = "šešiasdešimt";
                 }
                 else if (b == '5')
                 {
-                    second = "penkiasdesimt ";
+                    second = "penkiasdešimt";
                 }
                 else if (b == '4')
                 {
-                    second = "keturiasdesimt ";
+                    second = "keturiasdešimt";
                 }
                 else if (b == '3')
                 {
-                    second = "trisdesimt ";
+                    second = "trisdešimt";
                 }
                 else if (b == '2')
                 {
-                    second = "dvidesimt ";
+                    second = "dvidešimt";
                 }
             }
             else if (a != '*' && b != '*' && c == '*')
@@ -420,7 +637,7 @@ namespace LearningApp
                 }
                 else if (b == '8')
                 {
-                    second = " astuoni";
+                    second = " aštuoni";
                 }
                 else if (b == '7')
                 {
@@ -428,7 +645,7 @@ namespace LearningApp
                 }
                 else if (b == '6')
                 {
-                    second = " sesi";
+                    second = " šeši";
                 }
                 else if (b == '5')
                 {
@@ -450,6 +667,10 @@ namespace LearningApp
                 {
                     second = " vienas";
                 }
+                else if (b == '1')
+                {
+                    second = "";
+                }
             }
             return second;
         }
@@ -465,7 +686,7 @@ namespace LearningApp
                 }
                 else if (c == '8')
                 {
-                    third = " astuoni";
+                    third = " aštuoni";
                 }
                 else if (c == '7')
                 {
@@ -473,7 +694,7 @@ namespace LearningApp
                 }
                 else if (c == '6')
                 {
-                    third = " sesi";
+                    third = " šeši";
                 }
                 else if (c == '5')
                 {
@@ -508,6 +729,6 @@ namespace LearningApp
 
         }
 
-
+        
     }
 }
