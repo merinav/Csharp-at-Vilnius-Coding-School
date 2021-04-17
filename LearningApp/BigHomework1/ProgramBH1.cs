@@ -8,7 +8,7 @@ namespace LearningApp
         {
             //Begin9To9();
             //Begin19To19();
-            Begin99To99();
+            //Begin99To99();
 
         }       
 
@@ -374,13 +374,19 @@ namespace LearningApp
             if (CheckIfNumber99To99(input, CheckIfNumberIsNegative99To99(input)))
             {
                 int inputNumber = ConverStringToInt99To99(input);
-                if (CheckIfBetweenParameters99To99(inputNumber))
+                if (CheckIfBetweenParameters99To99(inputNumber))                   
                 {
-                    string first = FirstCharToText(ReturnFirstCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnSecondCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnThirdCharOfArray(ConvertIntToCharArray(inputNumber)));
-                    string second = SecondCharToText(ReturnFirstCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnSecondCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnThirdCharOfArray(ConvertIntToCharArray(inputNumber)));
-                    string third = ThirdCharToText(ReturnFirstCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnSecondCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnThirdCharOfArray(ConvertIntToCharArray(inputNumber)));
-                    Console.WriteLine("Skaičius žodžiais:" + " " + CompileResultText(first, second, third));
-   
+                    if ((inputNumber >= 11 && inputNumber <= 19) || (inputNumber >= -19 && inputNumber <= -11))
+                    {
+                        Console.WriteLine("Skaičius žodžiais:" + " " + ConvertToText11To19(inputNumber) + ".");
+                    }
+                    else
+                    {
+                        string first = FirstCharToText(ReturnFirstCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnSecondCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnThirdCharOfArray(ConvertIntToCharArray(inputNumber)));
+                        string second = SecondCharToText(ReturnFirstCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnSecondCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnThirdCharOfArray(ConvertIntToCharArray(inputNumber)));
+                        string third = ThirdCharToText(ReturnFirstCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnSecondCharOfArray(ConvertIntToCharArray(inputNumber)), ReturnThirdCharOfArray(ConvertIntToCharArray(inputNumber)));
+                        Console.WriteLine("Skaičius žodžiais:" + " " + CompileResultText(first, second, third) + ".");
+                    }
                 }
                 else
                 {
@@ -541,7 +547,7 @@ namespace LearningApp
         static string FirstCharToText(char a, char b, char c)
         {
             string first = "";
-            if (a != '*' && b != '*' && c !='*')
+            if (a != '*' && b != '*' && c != '*')
             {
                 first = "minus ";
             }
@@ -550,7 +556,7 @@ namespace LearningApp
                 if (a == '-')
                 {
                     first = "minus ";
-                }               
+                }
                 else if (a == '9')
                 {
                     first = "devyniasdešimt";
@@ -582,12 +588,57 @@ namespace LearningApp
                 else if (a == '2')
                 {
                     first = "dvidešimt ";
-                }                
+                }
+                else if (a == '1')
+                {
+                    first = "dešimt";
+                }
+
             }
-            else if (a == '0')
+            else if (a != '*' && b == '*' && c == '*')
             {
-                first = "nulis";
+                if (a == '9')
+                {
+                    first = " devyni";
+                }
+                else if (a == '8')
+                {
+                    first = " aštuoni";
+                }
+                else if (a == '7')
+                {
+                    first = " septyni";
+                }
+                else if (a == '6')
+                {
+                    first = " šeši";
+                }
+                else if (a == '5')
+                {
+                    first = " penki";
+                }
+                else if (a == '4')
+                {
+                    first = " keturi";
+                }
+                else if (a == '3')
+                {
+                    first = " trys";
+                }
+                else if (a == '2')
+                {
+                    first = " du";
+                }
+                else if (a == '1')
+                {
+                    first = " vienas";
+                }
+                else if (a == '0')
+                {
+                    first = "nulis";
+                }
             }
+            
             return first;            
         }
 
@@ -628,6 +679,11 @@ namespace LearningApp
                 {
                     second = "dvidešimt";
                 }
+                else if (b == '1')
+                {
+                    second = "dešimt";
+                }
+
             }
             else if (a != '*' && b != '*' && c == '*')
             {
@@ -721,10 +777,73 @@ namespace LearningApp
             return third;
         }
 
+        static string ConvertToText11To19(int inputNumber) 
+        {
+            string numberInText = "";
+            switch (inputNumber)
+            {
+                case 19:
+                    numberInText = "devyniolika";
+                    break;
+                case 18:
+                    numberInText = "astuoniolika";
+                    break;
+                case 17:
+                    numberInText = "septyniolika";
+                    break;
+                case 16:
+                    numberInText = "sesiolika";
+                    break;
+                case 15:
+                    numberInText = "penkiolika";
+                    break;
+                case 14:
+                    numberInText = "keturiolika";
+                    break;
+                case 13:
+                    numberInText = "trylika";
+                    break;
+                case 12:
+                    numberInText = "dvylika";
+                    break;
+                case 11:
+                    numberInText = "vienuolika";
+                    break;               
+                case -11:
+                    numberInText = "minus vienuolika";
+                    break;
+                case -12:
+                    numberInText = "minus dvylika";
+                    break;
+                case -13:
+                    numberInText = "minus trylika";
+                    break;
+                case -14:
+                    numberInText = "minus keturiolika";
+                    break;
+                case -15:
+                    numberInText = "minus penkiolika";
+                    break;
+                case -16:
+                    numberInText = "minus šešiolika";
+                    break;
+                case -17:
+                    numberInText = "minus septyniolika";
+                    break;
+                case -18:
+                    numberInText = "minus aštuoniolika";
+                    break;
+                case -19:
+                    numberInText = "minus devyniolika";
+                    break;
+                default: break;
+            }
+            return numberInText;
+        }
         static string CompileResultText(string first, string second, string third)
 
         {
-            string compiledText = first + second + third + ".";
+            string compiledText = first + second + third;
             return compiledText;
 
         }
