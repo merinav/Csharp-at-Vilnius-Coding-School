@@ -6,9 +6,10 @@ namespace LearningApp
 {
     class Program7
     {
-        static void Main7()
+        static void Main()
         {
             //TaskRandomNumbers();
+            TaskRandomTextOnline();
         }
 
         static void Lesson()
@@ -163,25 +164,86 @@ namespace LearningApp
 
         static void TaskRandomTextOnline() 
         {
+
+            string textString = GetText();
             
+            Console.WriteLine("Original text:");
+            Console.WriteLine(textString);
+            Console.WriteLine();
             
+            char[] delimiterChars = { ' ', ',', '.', ':', ';', '!', '?', '\'', '"',
+                '\t', '\n', '\r' };
+            string[] words = textString.Split(delimiterChars);
+            
+            Console.WriteLine($"Original text: {words.Length} words or symbols.");
+            Console.WriteLine();
+
+            List<string> stringList = new List<string>();
+            stringList = words.ToList();
+
+            emptyStringsRemoved(stringList);
+
+            Console.WriteLine($"Text with only words remaining: {stringList.Count} words.");
+            Console.WriteLine();
+            Console.WriteLine("Remaining text:");
+            PrintList(stringList);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            stringList.Sort((y, x) => x.Length - y.Length);
+            PrintList(stringList);
+            Console.WriteLine();
+            Console.WriteLine($"There is word 'split' somewhere: {stringList.Exists(wordSplit)}"); 
+
+
         }
 
         static string GetText()
         {
-            return @"Today’s Doodle, illustrated by Lagos-based guest artist Ohab TBJ, pays tribute to Nigerian musician Oliver de Coque on 
-                his 74th birthday. Crowned the “Highlife King of Africa,” he is widely revered as one of the continent's most prolific recording artists.
-                Born on this day in 1947 in the small town of Ezinifite in southeastern Nigeria, Oliver Sunday Akanite first took up the guitar at a young 
-                age, and as a teenager, studied the traditional Igbo music of the region and Congolese soukous.In 1970, at a performance by the popular Sunny 
-                Agaga and his Lucky Star Band, Akanite convinced Sunny to let him stand in as their guitarist; he was hired on the spot, providing a massive 
-                boost to his young career.Also a skilled player of the Nigerian board game okwe, Akanite became known as “Oliver de ka Okwe,” which he later 
-                adapted into his stage name, Oliver de Coque. 
-                De Coque famously infused the modern West African highlife genre with a Congolese - influenced guitar style and the energetic dance elements 
-                of Igbo music he grew up with, crafting a unique musical style, which he called Ogene.Beginning with his first solo release in 1976, de Coque’s 
-                music only grew in popularity at home and abroad, as he put out album after album featuring his masterful guitar work and fresh take on African
-                pop–over 70 throughout his lifetime.
-                In 1994, in recognition of his prodigious music achievement, de Coque was awarded an honorary doctorate in music by the University of New Orleans.
-                Thank you, Oliver de Coque, for strumming your way into the hearts of listeners around the world!";
+            return @"The physical nature of time is addressed by general relativity 
+            with respect to events in space-time. Examples of events are the collision 
+            of two particles, the explosion of a supernova, or the arrival of a rocket 
+            ship. Every event can be assigned four numbers representing its time and 
+            position (the event's coordinates). However, the numerical values are different
+            for different observers. In general relativity, the question of what time it is 
+            now only has meaning relative to a particular observer. Distance and time are 
+            intimately related and the time required for light to travel a specific distance
+            is the same for all observers, as first publicly demonstrated by Michelson and 
+            Morley. General relativity does not address the nature of time for extremely 
+            small intervals where quantum mechanics holds. At this time, there is no 
+            generally accepted theory of quantum general relativity.";
+        }
+
+        static void PrintList (List<string> list)
+        {
+            foreach (string item in list)
+            {
+                Console.WriteLine($"<{item}>");
+            }
+        }
+
+        static void emptyStringsRemoved(List<string> textList)
+        {
+            foreach (string item in textList.ToList())
+            {
+                if (item == "")                
+                {
+                    textList.Remove(item);
+                }              
+            }
+        }
+
+        static bool wordSplit(string word) 
+        {
+            if (word == "split")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

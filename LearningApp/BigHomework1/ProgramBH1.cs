@@ -4,7 +4,7 @@ namespace LearningApp
 {
     class ProgramBH1
     {
-        static void Main(string[] args)
+        static void MainBH1(string[] args)
         {
             //Begin9To9();
             //Begin19To19();
