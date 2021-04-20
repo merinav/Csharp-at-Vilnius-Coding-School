@@ -6,7 +6,7 @@ namespace LearningApp
 {
     class Program7
     {
-        static void Main()
+        static void Main7()
         {
             //TaskRandomNumbers();
             TaskRandomTextOnline();

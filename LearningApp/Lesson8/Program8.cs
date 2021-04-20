@@ -35,6 +35,8 @@ namespace LearningApp
             Client testClient = new Client("Jon", new DateTime(2020, 09, 01), true);
             Client testClient2 = new Client("NotJon", new DateTime(2020, 09, 01), false);
 
+
+
             Delivery testDelivery1 = new Delivery("Kaunas", true);
 
             Good testGood = new Good(75, true);
