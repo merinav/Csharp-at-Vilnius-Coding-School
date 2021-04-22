@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace LearningApp.GameSample.GUI
 {
-    //class Window : GuiObject
-    //{
-    //    private Frame border;
+    class Window : GuiObject
+    {
+        private Frame border;
 
 
-    //    //public Frame(int x, int y, int width, int heigt, char forFrame) 
-    //    //{ 
-            
-    //    //}
-    //    //public void Render() 
-    //    //{
-        
-    //    //}
-    //}
+        public Window (int x, int y, int width, int height, char forFrame)
+            : base (x, y, width, height)
+        {
+            //?
+        }
+        public void Render()
+        {
+
+        }
+    }
 }

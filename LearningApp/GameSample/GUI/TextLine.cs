@@ -18,9 +18,10 @@ namespace LearningApp.GameSample.GUI
 
         public void Render()
         {
-            if (data.Length > Width)
+            if (data.Length >= Width)
             {
                 // TODO : Cut text if it's too long.
+                data = data.Substring(0, Width);
                 Console.SetCursorPosition(X, Y);
             }
             else
