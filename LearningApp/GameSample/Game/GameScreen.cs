@@ -8,8 +8,8 @@ namespace LearningApp.GameSample.Game
 {
     class GameScreen
     {
-        private int height;
         private int width;
+        private int height;
         private Hero hero;
         private List<Enemy> enemies = new List<Enemy>();
 
@@ -23,20 +23,48 @@ namespace LearningApp.GameSample.Game
         {
             this.hero = hero;
         }
-
-        public void MoveHeroRight()
+        public void AddEnemy(Enemy enemy)
         {
-            hero.MoveRight();
+            enemies.Add(enemy);
         }
 
+        public void Render() 
+        {
+            hero.PrintInfo();
+            foreach (var enemy in enemies)
+            {
+                enemy.PrintInfo();
+            }
+
+        }
+        
         public void MoveHeroLeft()
         {
             hero.MoveLeft();
         }
-
-        public void AddEnemy(Enemy enemy)
+        public void MoveHeroRight()
         {
-            enemies.Add(enemy);
+            hero.MoveRight();
+        }
+       
+        public Enemy GetEnemyById(int id) 
+        {
+            foreach (var enemy in enemies)
+            {
+                if (enemy.GetId() == id)
+                {
+                    return enemy;
+                }
+            }
+            return null;
+        }
+
+        public void MoveAllEnemiesDown()
+        {
+            foreach (var enemy in enemies)
+            {
+                enemy.MoveDown();
+            }
         }
 
     }

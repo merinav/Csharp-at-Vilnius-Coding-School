@@ -12,36 +12,22 @@ namespace LearningApp.GameSample
     {
         static void Main() 
         {
-            //create and move hero
-            Hero testHero = new Hero(10, 10, "testHero");
-            testHero.PrintInfo();
-            testHero.MoveLeft();
-            testHero.PrintInfo();
-
-            // create and move enemies
-            int enemyCount = 0;
-            Random rnd = new Random();
-            
-            List<Enemy> enemies = new List<Enemy>();
+            GameScreen gameScreen = new GameScreen(40, 200);
+            gameScreen.SetHero(new Hero(5, 5, "Hero"));
+            gameScreen.Render();
+            int uniqueID = 0;
+            Random rnd = new Random();            
             for (int i = 0; i < 10; i++)
             {
-                enemies.Add(new Enemy(enemyCount, rnd.Next(0, 10), rnd.Next(0, 10), "enemy" + enemyCount));
-                enemyCount++;
+                gameScreen.AddEnemy(new Enemy(uniqueID, rnd.Next(0,10), rnd.Next(0,10),
+                    "EnemyNo" + uniqueID));
+                uniqueID++;              
             }
-            foreach (Enemy enemy in enemies)
-            {
-                enemy.PrintInfo();
-            }
-
-            Animal animal = new Animal(2);
-            animal.Live();
-
-            Bird bird = new Bird(5, "red");
-            bird.Live();
-            bird.Fly();
-            
-
-
+            gameScreen.Render();
+            gameScreen.MoveHeroLeft();
+            gameScreen.MoveAllEnemiesDown();
+            gameScreen.GetEnemyById(0).MoveDown();
+            gameScreen.Render();
         }
     }
 }

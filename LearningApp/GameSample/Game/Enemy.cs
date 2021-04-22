@@ -32,6 +32,9 @@ namespace LearningApp.GameSample.Game
             Console.WriteLine($"enemy id {id}, name {name}, located at {x} * {y}");
         }
 
-
+        public int GetId()
+        {
+            return id;
+        }
     }
 }
