@@ -17,13 +17,13 @@ namespace LearningApp.BigHomework2
         //priešingu atveju – false. 
         //
 
-        static void MainBH2() 
+        static void Main1() 
         {
 
             //IntToIntArray();
 
-            int[] testArray1 = new int[] {1, 2, 3, 4, 5, 6};
-            int[] testArray2 = new int[] {6, 5, 4, 3, 2, 1};
+            int[] testArray1 = new int[] { 1, 2, 3, 4, 5, 6 };
+            int[] testArray2 = new int[] { 6, 5, 4, 3, 2, 1 };
 
             Console.WriteLine($"testArray1 is <{testArray1}>");
             Console.WriteLine($"is testArray1 made of " +
@@ -44,8 +44,8 @@ namespace LearningApp.BigHomework2
 
         private static void IntToIntArray(int number = 123456)
         {
-            Console.WriteLine($"number: {number}");            
-            
+            Console.WriteLine($"number: {number}");
+
             string numberString = Convert.ToString(number);
             Console.WriteLine($"number in string form: {numberString}");
 
@@ -64,27 +64,27 @@ namespace LearningApp.BigHomework2
             }
         }
 
-        private static bool ArrayElementsDifferent(int[] intArray) 
+        private static bool ArrayElementsDifferent(int[] intArray)
         {
             bool returnValue = true;
             int test;
-            int test2;           
-                for (int i = 0; i < intArray.Length; i++)
-                {
-                    test = intArray[i];                
-                for (int j = i+1; j < intArray.Length; j++)                    
+            int test2;
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                test = intArray[i];
+                for (int j = i + 1; j < intArray.Length; j++)
                 {
                     test2 = intArray[j];
                     if (test == test2)
-                        {
-                            returnValue = false;
-                        }
-                    }               
-                }            
+                    {
+                        returnValue = false;
+                    }
+                }
+            }
             return returnValue;
         }
 
-        private static bool ArraysSameElementsDifferentPlaces(int[] intArray1, int[] intArray2) 
+        private static bool ArraysSameElementsDifferentPlaces(int[] intArray1, int[] intArray2)
         {
             bool returnValue = true;
 

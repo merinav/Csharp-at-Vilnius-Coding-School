@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LearningApp.Lesson11.Lesson11_2
 {
-    class program
+    class Program
     {
-        static void Main() 
+        static void Main00() 
         {
             //Class1 klase1 = new Class1();
             //klase1.PrintInfo();
