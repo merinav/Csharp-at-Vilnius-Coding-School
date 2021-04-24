@@ -17,7 +17,7 @@ namespace LearningApp.BigHomework2
         //priešingu atveju – false. 
         //
 
-        static void Main1() 
+        static void Main() 
         {
 
             //IntToIntArray();
@@ -25,11 +25,16 @@ namespace LearningApp.BigHomework2
             int[] testArray1 = new int[] { 1, 2, 3, 4, 5, 6 };
             int[] testArray2 = new int[] { 6, 5, 4, 3, 2, 1 };
 
-            Console.WriteLine($"testArray1 is <{testArray1}>");
+            Console.WriteLine($"testArray1 is:");
+            Print(testArray1);
+
+            
             Console.WriteLine($"is testArray1 made of " +
                 $"different eleements: {ArrayElementsDifferent(testArray1)}");
 
-            Console.WriteLine($"testArray1 is <{testArray2}>");
+            Console.WriteLine($"testArray2 is:");
+            Print(testArray2);
+
             Console.WriteLine($"is testArray2 made of " +
                 $"different eleements: {ArrayElementsDifferent(testArray2)}");
 
@@ -38,11 +43,20 @@ namespace LearningApp.BigHomework2
                $" {ArraysSameElementsDifferentPlaces(testArray1, testArray2)}");
 
 
-            ;
+            
 
         }
 
-        private static void IntToIntArray(int number = 123456)
+        //SUSITVARKYTI WRITELINE'us naudojamus patikrinimams!
+         static void Print(int[] array) 
+        {
+            foreach (int item in array)
+            {
+                Console.WriteLine($"<{item}>");
+            }
+        }
+        
+         static void IntToIntArray(int number = 123456)
         {
             Console.WriteLine($"number: {number}");
 
@@ -53,8 +67,9 @@ namespace LearningApp.BigHomework2
 
             for (int i = 0; i < numberString.Length; i++)
             {
-                char a = numberString[i];
-                int b = Convert.ToInt32(char.GetNumericValue(a));
+                char a = numberString[i];             
+                int b = (int)(char.GetNumericValue(a));
+                //int b = Convert.ToInt32(char.GetNumericValue(a));
                 numberArray[i] = b;
                 Console.WriteLine(numberArray[i]);
             }
@@ -64,7 +79,8 @@ namespace LearningApp.BigHomework2
             }
         }
 
-        private static bool ArrayElementsDifferent(int[] intArray)
+
+        static bool ArrayElementsDifferent(int[] intArray)
         {
             bool returnValue = true;
             int test;
@@ -84,7 +100,7 @@ namespace LearningApp.BigHomework2
             return returnValue;
         }
 
-        private static bool ArraysSameElementsDifferentPlaces(int[] intArray1, int[] intArray2)
+         static bool ArraysSameElementsDifferentPlaces(int[] intArray1, int[] intArray2)
         {
             bool returnValue = true;
 
