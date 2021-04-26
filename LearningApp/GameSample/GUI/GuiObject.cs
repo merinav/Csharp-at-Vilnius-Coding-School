@@ -6,12 +6,21 @@ using System.Threading.Tasks;
 
 namespace LearningApp.GameSample.GUI
 {
-     class GuiObject
+     abstract class GuiObject
     {
-        protected int X;
-        protected int Y;
-        protected int Width;
-        protected int Height;
+        private int x;
+        private int y;
+        private int width;
+        private int height;
+
+        protected int X { get; set; }
+
+        protected int Y { get; set; }
+        
+        protected int Width { get; set; }
+       
+        protected int Height { get; set; }
+        
 
         public GuiObject(int x, int y, int width, int height) 
         {
@@ -21,9 +30,7 @@ namespace LearningApp.GameSample.GUI
             this.Height = height;
         }
 
-         public void Render() //?????
-        {
-            
-        }
+        //abstract public void Render();
+        
     }   
 }

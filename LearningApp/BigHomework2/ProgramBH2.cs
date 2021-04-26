@@ -17,7 +17,7 @@ namespace LearningApp.BigHomework2
         //priešingu atveju – false. 
         //
 
-        static void Main()
+        static void MainBH2()
         {
 
             //IntToIntArray();

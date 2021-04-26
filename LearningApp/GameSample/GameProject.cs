@@ -11,7 +11,7 @@ namespace LearningApp.GameSample
 {
     class GameProject
     {
-        static void Main1() 
+        static void MainGM() 
         {
             GameController gameController = new GameController();
             gameController.StartGame();
@@ -34,10 +34,16 @@ namespace LearningApp.GameSample
             TextLine text3 = new TextLine(30, 10, 20, "There???");
             text3.Render();
 
+            
+
+            Button button1 = new Button(35, 15, 10, 5, "button");
+            button1.IsActive = true;
+            button1.Render();
+
+            //Window window1 = new Window(0, 0, 60, 25, 'Q');
+            //window1.Render();
+
             Console.ReadKey();
-
-            Button button1 = new Button(10, 10, 5, 5, "button");
-
 
 
         }

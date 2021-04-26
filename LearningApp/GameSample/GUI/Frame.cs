@@ -8,7 +8,12 @@ namespace LearningApp.GameSample.GUI
 {
     class Frame : GuiObject
     {
-        private char renderChar;
+        private char renderChar = '*';
+
+
+        public char RenderChar { get; set; }
+        
+
         public Frame(int x, int y, int width, int height, char renderChar)
             : base(x, y, width, height)
         {

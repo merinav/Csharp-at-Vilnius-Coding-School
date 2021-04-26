@@ -13,6 +13,9 @@ namespace LearningApp.GameSample.GUI
         private Frame notActiveFrame;
         private TextLine textLine;
 
+        public bool IsActive { get; set; }
+       
+
         public Button(int x, int y, int width, int height, string name) 
             : base (x, y, width, height)
         {
