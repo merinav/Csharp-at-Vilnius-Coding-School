@@ -12,7 +12,6 @@ namespace LearningApp.Lesson12.LessonTaskInterface
         private List<IPrintable> printableItems = new List<IPrintable>();
 
         
-
         public void AddPrintableItem(IPrintable printable)
         {
             printableItems.Add(printable);

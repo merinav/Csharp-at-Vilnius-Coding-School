@@ -7,24 +7,29 @@ using System.Threading.Tasks;
 namespace LearningApp.GameSample.GUI
 {
     class Button : GuiObject
+
     {
         private Frame activeFrame;
-        private bool isActive = false;
         private Frame notActiveFrame;
         private TextLine textLine;
+        private bool isActive = false;
 
-        public bool IsActive { get; set; }
-       
+        private const char activeChar = '#';
+        private const char notActiveChar = '+';
 
-        public Button(int x, int y, int width, int height, string name) 
-            : base (x, y, width, height)
+        public Button(int x, int y, int width, int height, string label) : base(x, y, width, height)
         {
-            textLine = new TextLine(x+1, y+1, width -2, name);
-            activeFrame = new Frame(x, y, width, height, '*');
-            notActiveFrame = new Frame(x, y, width, height, '/');
+            activeFrame = new Frame(x, y, width, height, activeChar);
+            notActiveFrame = new Frame(x, y, width, height, notActiveChar);
+            textLine = new TextLine(x + 1, y + height / 2, width - 2, label);
         }
 
-        public void Render() 
+        public void SetActive()
+        {
+            isActive = true;
+        }
+
+        public void Render()
         {
             if (isActive)
             {
@@ -36,11 +41,6 @@ namespace LearningApp.GameSample.GUI
             }
             textLine.Render();
         }
-
-        public void SetActive(bool isActive)
-        {
-            this.isActive = isActive;
-            Render();           
-        }
     }
+
 }

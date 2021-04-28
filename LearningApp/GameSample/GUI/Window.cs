@@ -11,15 +11,16 @@ namespace LearningApp.GameSample.GUI
         private Frame border;
         private TextLine titleText;
 
-        public Window (int x, int y, int width, int height, string title, char frameChar)
-            : base (x, y, width, height)
+        public Window(int x, int y, int width, int height, string title, char borderChar) : base(x, y, width, height)
         {
-            border = new Frame(x, y, width, height, frameChar);
-            titleText = new TextLine(x, y, width, title);
+            border = new Frame(x, y, width, height, borderChar);
+            titleText = new TextLine(x + 3, y, title.Length + 2, $" {title} ");
         }
-        public void Render()
+
+        public virtual void Render()
         {
             border.Render();
+            titleText.Render();
         }
     }
 }

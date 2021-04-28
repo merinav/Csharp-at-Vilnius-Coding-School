@@ -6,31 +6,21 @@ using System.Threading.Tasks;
 
 namespace LearningApp.GameSample.GUI
 {
-     abstract class GuiObject
+      class GuiObject
+
     {
-        private int x;
-        private int y;
-        private int width;
-        private int height;
+        protected int X;
+        protected int Y;
+        protected int Width;
+        protected int Height;
 
-        protected int X { get; set; }
-
-        protected int Y { get; set; }
-        
-        protected int Width { get; set; }
-       
-        protected int Height { get; set; }
-        
-
-        public GuiObject(int x, int y, int width, int height) 
+        public GuiObject(int x, int y, int width, int height)
         {
-            this.X = x;
-            this.Y = y;
-            this.Width = width;
-            this.Height = height;
+            X = x;
+            Y = y;
+            Width = width;
+            Height = height;
         }
+    }
 
-        //abstract public void Render();
-        
-    }   
 }

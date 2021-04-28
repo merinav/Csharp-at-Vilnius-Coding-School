@@ -37,7 +37,7 @@ namespace LearningApp.Lesson12.LessonTaskInterface.Elements
 
         public void Render()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Ghost Render");
         }
     }
 }

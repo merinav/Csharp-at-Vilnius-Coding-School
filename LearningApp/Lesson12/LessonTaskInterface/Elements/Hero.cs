@@ -33,7 +33,7 @@ namespace LearningApp.Lesson12.LessonTaskInterface.Elements
 
         public void Render()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Hero Render");
         }
 
         public void Speaks()

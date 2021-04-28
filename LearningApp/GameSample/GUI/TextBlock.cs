@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 
 namespace LearningApp.GameSample.GUI
 {
-    class TextBlock : GuiObject
+    sealed class TextBlock : GuiObject
     {
         private List<TextLine> textBlocks = new List<TextLine>();
 
-       
-        public TextBlock(int x, int y, int width, List<string> list)
-            : base(x, y, width, 1)
+        public TextBlock(int x, int y, int width, List<string> textList) : base(x, y, width, 0)
         {
-            //textBlocks = TextLine(x, y, width, string data);
-        }
-        public void Render()
-        {
-            
+            for (int i = 0; i < textList.Count; i++)
+            {
+                textBlocks.Add(new TextLine(x, y + i, width, textList[i]));
+            }
         }
 
+        public void Render()
+        {
+            for (int i = 0; i < textBlocks.Count; i++)
+            {
+                textBlocks[i].Render();
+            }
+        }
     }
 }
