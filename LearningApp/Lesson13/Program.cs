@@ -12,7 +12,7 @@ namespace LearningApp.Lesson13
     {
         public static object BuildConstructor { get; private set; }
 
-        static void Main() {
+        static void Main13() {
 
             //string data = "helo world hi hello";
             //string[] dataSplit = StringUtils.SplitTextToWords(data);

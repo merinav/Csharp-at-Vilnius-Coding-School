@@ -17,7 +17,7 @@ namespace LearningApp.Lesson12
         //ziureti i objekta is skirtingu poziurio tasku
 
 
-        static void NotMain() 
+        static void Main12() 
         {
             /*
             Pet pet = new Pet(); // pirmas poziurio taskas i pet
@@ -49,17 +49,17 @@ namespace LearningApp.Lesson12
             house.Print();
             ghost.Print();
 
-            IRenderable[] array = new IRenderable[] { hero, dog, ghost, house, sun };
+            //IRenderable[] array = new IRenderable[] { hero, dog, ghost, house, sun };
 
-            Renderer renderer = new Renderer();
-            renderer.AddRenderItem(array);
+            //Renderer renderer = new Renderer();
+            //renderer.AddRenderItem(array);
 
-            static void GetX(IRenderable item)
-            {
-                Console.WriteLine(item.X);
-            }
+            //static void GetX(IRenderable item)
+            //{
+            //    Console.WriteLine(item.X);
+            //}
 
-            GetX(dog);
+            //GetX(dog);
         }
     }
 }
