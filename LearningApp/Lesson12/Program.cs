@@ -49,17 +49,7 @@ namespace LearningApp.Lesson12
             house.Print();
             ghost.Print();
 
-            //IRenderable[] array = new IRenderable[] { hero, dog, ghost, house, sun };
-
-            //Renderer renderer = new Renderer();
-            //renderer.AddRenderItem(array);
-
-            //static void GetX(IRenderable item)
-            //{
-            //    Console.WriteLine(item.X);
-            //}
-
-            //GetX(dog);
+           
         }
     }
 }

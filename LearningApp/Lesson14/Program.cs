@@ -9,7 +9,7 @@ namespace LearningApp.Lesson14
 {
     class Program
     {
-        static void Main() 
+        static void Main14() 
         {
 
             Human boss = new Human("Vytautas");

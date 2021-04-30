@@ -12,7 +12,7 @@ namespace LearningApp.GameSample
 {
     class GameProject
     {
-        static void MainGP()
+        static void Main()
         {
             //GameController gameController = new GameController();
             //gameController.StartGame();
