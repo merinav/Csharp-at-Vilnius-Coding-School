@@ -17,7 +17,7 @@ namespace LearningApp.GameSample.GUI
             titleText = new TextLine(x + 3, y, title.Length + 2, $" {title} ");
         }
 
-        public virtual void Render()
+        public override void Render()
         {
             border.Render();
             titleText.Render();

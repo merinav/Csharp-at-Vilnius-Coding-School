@@ -16,7 +16,7 @@ namespace LearningApp.GameSample.GUI
             this.data = data;
         }
 
-        public void Render()
+        public override void Render()
         {
             if (data.Length >= Width)
             {

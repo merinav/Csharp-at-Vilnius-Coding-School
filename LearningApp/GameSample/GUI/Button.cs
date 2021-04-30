@@ -24,12 +24,14 @@ namespace LearningApp.GameSample.GUI
             textLine = new TextLine(x + 1, y + height / 2, width - 2, label);
         }
 
+        public bool IsActive { get; set; }
+
         public void SetActive()
         {
             isActive = true;
         }
 
-        public void Render()
+        public override void Render()
         {
             if (isActive)
             {

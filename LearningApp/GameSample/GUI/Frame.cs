@@ -16,12 +16,15 @@ namespace LearningApp.GameSample.GUI
             this.renderChar = renderChar;
         }
 
-        internal void Render()
+
+        public char RenderChar { get; set; }
+
+        public override void Render()
         {
-            for (int i = 0; i < Height; i++)
+            for (int i = 0; i < Heigth; i++)
             {
                 Console.SetCursorPosition(X, Y + i);
-                if (i == 0 || i == Height - 1)
+                if (i == 0 || i == Heigth - 1)
                 {
                     for (int j = 0; j < Width; j++)
                     {
