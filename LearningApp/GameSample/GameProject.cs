@@ -23,13 +23,17 @@ namespace LearningApp.GameSample
             Console.CursorVisible = false;
            
             GuiController guiController = new GuiController();
-            guiController.ShowMenu();
-            guiController.ShowCreditWindow();
+            //guiController.ShowMenu();
+            //guiController.ShowCreditWindow();
+
+            guiController.testPrinting();
 
             Console.ReadKey();
 
             
-            
+
+
+           
         }
     }
 }

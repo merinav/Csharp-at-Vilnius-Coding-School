@@ -32,20 +32,24 @@ namespace LearningApp.GameSample.Game
             GameController gameController = new GameController();
         }
 
-        //public void Controller(ConsoleKeyInfo key) 
-        //{
+       public void testPrinting() 
+        {
 
-        //    //starto pozicijoj kazkuris active? asiuminam kad ant centrinio mygtuko?
-        //    var input = Console.ReadKey();
-        //    while (input != null)
-        //    {
+            menuWindow.OnlyQuitButtonActive();
+            menuWindow.Render();
 
-        //    }
-        //    if (key == )
-        //    {
-        //        Console.WriteLine("move left");
-        //    }
-        //}
+            Console.ReadLine();
+
+            menuWindow.OnlyCreditsButtonActive();
+            menuWindow.Render();
+
+            Console.ReadLine();
+            menuWindow.OnlyStartButtonActive();
+            menuWindow.Render();
+
+        }
+
+
 
     }
 }

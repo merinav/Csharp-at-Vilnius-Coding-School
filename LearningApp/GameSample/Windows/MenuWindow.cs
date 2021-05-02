@@ -9,12 +9,14 @@ namespace LearningApp.GameSample.Windows
 {
     class MenuWindow : Window
     {
+        //private fields
         private Button startButton;
         private Button creditsButton;
         private Button quitButton;
         private TextBlock titleTextBlock;
+        private List<Button> buttonList = new List<Button> { };
 
-
+        //constructor
         public MenuWindow() : base(0, 0, 120, 30, "Game menu!", '%')
         {
             titleTextBlock = new TextBlock(10, 5, 100, new List<String> { "Super duper zaidimas", "Vardas Pavardaitis kuryba!", "Made in Vilnius Coding School!" });
@@ -25,8 +27,18 @@ namespace LearningApp.GameSample.Windows
             creditsButton = new Button(50, 13, 18, 5, "Credits");
 
             quitButton = new Button(80, 13, 18, 5, "Quit");
+
+            buttonList.Add(startButton);
+            buttonList.Add(creditsButton);
+            buttonList.Add(quitButton);
         }
 
+        //properties
+        public Button StartButton { get; set; }
+        public Button CreditsButton { get; set; }
+        public Button QuitButton { get; set; }
+
+        //methods
         public override void Render()
         {
             base.Render();
@@ -39,5 +51,28 @@ namespace LearningApp.GameSample.Windows
 
             Console.SetCursorPosition(0, 0);
         }
+
+        public void OnlyQuitButtonActive() 
+        {
+            quitButton.SetActive();
+            startButton.SetNotActive();
+            creditsButton.SetNotActive();
+        }
+
+        public void OnlyCreditsButtonActive()
+        {
+            creditsButton.SetActive();
+            startButton.SetNotActive();
+            quitButton.SetNotActive();
+        }
+
+        public void OnlyStartButtonActive()
+        {
+            quitButton.SetNotActive();
+            startButton.SetActive();
+            creditsButton.SetNotActive();
+        }
+
+
     }
 }

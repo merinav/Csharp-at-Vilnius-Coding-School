@@ -15,7 +15,7 @@ namespace LearningApp.GameSample.GUI
         private bool isActive = false;
 
         private const char activeChar = '#';
-        private const char notActiveChar = '+';
+        private const char notActiveChar = '.';
 
         public Button(int x, int y, int width, int height, string label) : base(x, y, width, height)
         {
@@ -29,6 +29,11 @@ namespace LearningApp.GameSample.GUI
         public void SetActive()
         {
             isActive = true;
+        }
+
+        public void SetNotActive() 
+        {
+            isActive = false;
         }
 
         public override void Render()
