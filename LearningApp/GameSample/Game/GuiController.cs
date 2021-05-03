@@ -34,21 +34,46 @@ namespace LearningApp.GameSample.Game
 
        public void testPrinting() 
         {
-
             menuWindow.OnlyQuitButtonActive();
-            menuWindow.Render();
 
             Console.ReadLine();
-
-            menuWindow.OnlyCreditsButtonActive();
-            menuWindow.Render();
+            menuWindow.OnlyCreditsButtonActive(); 
 
             Console.ReadLine();
             menuWindow.OnlyStartButtonActive();
-            menuWindow.Render();
 
         }
 
+
+
+        public void testInput() 
+        {
+
+            int activeButton = 0;
+            var consoleInput = Console.ReadKey(false).Key;
+
+            
+            while (consoleInput == ConsoleKey.RightArrow)
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    menuWindow.ActivateButton(0);
+                    activeButton++;
+                }
+                break;
+            }
+
+            //while (consoleInput == ConsoleKey.LeftArrow)
+            //{
+            //    for (int i = 0; i < 2; i++)
+            //    {
+            //        menuWindow.ActivateButton(0);
+            //        activeButton++;
+            //    }
+            //    break;
+  
+
+        }
 
 
     }

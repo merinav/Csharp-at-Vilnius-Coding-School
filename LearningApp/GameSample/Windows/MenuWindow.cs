@@ -38,6 +38,8 @@ namespace LearningApp.GameSample.Windows
         public Button CreditsButton { get; set; }
         public Button QuitButton { get; set; }
 
+        public List<Button> ButtonList { get; set; }
+
         //methods
         public override void Render()
         {
@@ -57,6 +59,7 @@ namespace LearningApp.GameSample.Windows
             quitButton.SetActive();
             startButton.SetNotActive();
             creditsButton.SetNotActive();
+            this.Render();
         }
 
         public void OnlyCreditsButtonActive()
@@ -64,6 +67,7 @@ namespace LearningApp.GameSample.Windows
             creditsButton.SetActive();
             startButton.SetNotActive();
             quitButton.SetNotActive();
+            this.Render();
         }
 
         public void OnlyStartButtonActive()
@@ -71,8 +75,23 @@ namespace LearningApp.GameSample.Windows
             quitButton.SetNotActive();
             startButton.SetActive();
             creditsButton.SetNotActive();
+            this.Render();
         }
 
-
+        public void ActivateButton(int buttonNumber) 
+        {
+            if (buttonNumber == 0)
+            {
+                OnlyStartButtonActive();
+            }
+            else if (buttonNumber == 1)
+            {
+                OnlyCreditsButtonActive();
+            }
+            else if (buttonNumber == 2)
+            {
+                OnlyQuitButtonActive();
+            }
+        }
     }
 }
