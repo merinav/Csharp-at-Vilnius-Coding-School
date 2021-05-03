@@ -63,15 +63,7 @@ namespace LearningApp.GameSample.Game
                 break;
             }
 
-            //while (consoleInput == ConsoleKey.LeftArrow)
-            //{
-            //    for (int i = 0; i < 2; i++)
-            //    {
-            //        menuWindow.ActivateButton(0);
-            //        activeButton++;
-            //    }
-            //    break;
-  
+            
 
         }
 

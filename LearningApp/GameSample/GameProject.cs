@@ -12,7 +12,7 @@ namespace LearningApp.GameSample
 {
     class GameProject
     {
-        static void Main()
+        static void MainHomework()
         {
             //MenuWindow gameWindow = new MenuWindow();
             //gameWindow.Render();
