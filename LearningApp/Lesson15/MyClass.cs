@@ -47,22 +47,16 @@ namespace LearningApp.Lesson15
             switch (level)
             {
                 case EducationLevel.Pradinis:
-                    Console.WriteLine("Pradinis");
                     break;
                 case EducationLevel.Vidurinis:
-                    Console.WriteLine("Vidurinis");
                     break;
                 case EducationLevel.Aukstasis:
-                    Console.WriteLine("Aukstasis");
                     break;
                 case EducationLevel.MagistroLaipsnis:
-                    Console.WriteLine("MagistroLaipsnis");
                     break;
                 case EducationLevel.DaktaroLaipsnis:
-                    Console.WriteLine("DaktaroLaipsnis");
                     break;
-                default:
-                    break;
+                default: break;
             }
 
         }

@@ -10,7 +10,7 @@ namespace LearningApp.Lesson15
     {
         internal void DoBad()
         {
-            throw new MyException ("something bad");
+            //throw new MyException ("something bad");
         }
     }
 }

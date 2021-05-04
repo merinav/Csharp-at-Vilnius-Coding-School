@@ -8,7 +8,7 @@ namespace LearningApp.Lesson15
 {
     class Program
     {
-        static void Main() 
+        static void Main15() 
         {
 
             //List<int> testList = new List<int> {1, 1, 1 };
