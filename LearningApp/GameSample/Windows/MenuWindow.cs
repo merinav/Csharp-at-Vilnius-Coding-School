@@ -57,19 +57,56 @@ namespace LearningApp.GameSample.Windows
             Console.SetCursorPosition(0, 0);
         }
 
-        public void ImplementKeyboardInput(ConsoleKeyInfo key) 
+        public void UserMoveLeft() 
         {
-            //char input = Convert.ToChar(Console.ReadKey());
-
-            // key = Console.ReadKey();
             bool startbtn = StartButton.IsActive;
             bool creditsbtn = CreditsButton.IsActive;
             bool quitbtn = QuitButton.IsActive;
 
-            if (key.Key == ConsoleKey.RightArrow)
+            if (startbtn == true || creditsbtn == true)
             {
+                StartButton.SetActive();
+                CreditsButton.SetNotActive();
+                QuitButton.SetNotActive();
+                this.Render();
+            }
+            else if (quitbtn == true)
+            {
+                StartButton.SetNotActive();
+                CreditsButton.SetActive();
+                QuitButton.SetNotActive();
+                this.Render();
+            }
+        }
+
+        public void UserMoveRight() 
+        {
+            bool startbtn = StartButton.IsActive;
+            bool creditsbtn = CreditsButton.IsActive;
+            bool quitbtn = QuitButton.IsActive;
+            if (startbtn == true)
+                {
+                    StartButton.SetNotActive();
+                    CreditsButton.SetActive();
+                    QuitButton.SetNotActive();
+                    this.Render();
+                }
+            else if (creditsbtn == true || quitbtn == true)
+                {
+                    StartButton.SetNotActive();
+                    CreditsButton.SetNotActive();
+                    QuitButton.SetActive();
+                    this.Render();
+                }
+        }
+
+        public void UserEnter()
+        {
+            bool startbtn = StartButton.IsActive;
+            bool creditsbtn = CreditsButton.IsActive;
+            bool quitbtn = QuitButton.IsActive;
                 if (startbtn == true)
-                {        
+                {
                     StartButton.SetNotActive();
                     CreditsButton.SetActive();
                     QuitButton.SetNotActive();
@@ -77,53 +114,27 @@ namespace LearningApp.GameSample.Windows
                 }
                 else if (creditsbtn == true || quitbtn == true)
                 {
-                    StartButton.SetNotActive();                    
+                    StartButton.SetNotActive();
                     CreditsButton.SetNotActive();
                     QuitButton.SetActive();
                     this.Render();
                 }
-            }
-            else if (key.Key == ConsoleKey.LeftArrow)
-            {
-                if (startbtn == true || creditsbtn == true )
-                {
-                    StartButton.SetActive();
-                    CreditsButton.SetNotActive();
-                    QuitButton.SetNotActive();
-                    this.Render();
-                }
-                else if ( quitbtn == true)
-                {
-                    StartButton.SetNotActive();
-                    CreditsButton.SetActive();
-                    QuitButton.SetNotActive();
-                    this.Render();
-                }
-            }
-                
-
-
-            //switch (key.Key)
-            //{
-            //    case ConsoleKey.Enter:
-            //        Console.WriteLine("enter");
-            //        break;\
-            //    case ConsoleKey.Escape:
-            //        Console.WriteLine("Escape");
-            //        break;
-            //    case ConsoleKey.LeftArrow:
-            //        Console.WriteLine("LeftArrow");
-            //        break;
-            //    case ConsoleKey.RightArrow:
-            //        Console.WriteLine("RightArrow");
-            //        break;
-            //    default:
-            //        break;
-            //}
-
         }
 
+        public bool ReturnStartButtonValue() 
+        {
+            return StartButton.IsActive;
+        }
 
+        public bool ReturCreditsButtonValue()
+        {
+            return CreditsButton.IsActive;
+        }
+
+        public bool ReturnQuitButtonValue()
+        {
+            return QuitButton.IsActive;
+        }
 
     }
 }
