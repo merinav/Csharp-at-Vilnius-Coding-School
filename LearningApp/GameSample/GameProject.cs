@@ -12,7 +12,7 @@ namespace LearningApp.GameSample
 {
     class GameProject
     {
-        static void MainHomework()
+        static void Main()
         {
             //MenuWindow gameWindow = new MenuWindow();
             //gameWindow.Render();
@@ -28,12 +28,9 @@ namespace LearningApp.GameSample
 
             //guiController.testPrinting();
 
-            guiController.testInput();
+            guiController.ReadKeyboardInput();
 
             Console.ReadKey();
-
-            
-
 
            
         }

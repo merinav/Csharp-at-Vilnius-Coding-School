@@ -10,27 +10,30 @@ namespace LearningApp.GameSample.Windows
     class MenuWindow : Window
     {
         //private fields
-        private Button startButton;
-        private Button creditsButton;
-        private Button quitButton;
+        //private Button startButton;
+        //private Button creditsButton;
+        //private Button quitButton;
         private TextBlock titleTextBlock;
-        private List<Button> buttonList = new List<Button> { };
+        //private List<Button> buttonList = new List<Button> { };
 
         //constructor
         public MenuWindow() : base(0, 0, 120, 30, "Game menu!", '%')
         {
             titleTextBlock = new TextBlock(10, 5, 100, new List<String> { "Super duper zaidimas", "Vardas Pavardaitis kuryba!", "Made in Vilnius Coding School!" });
 
-            startButton = new Button(20, 13, 18, 5, "Start");
-            startButton.SetActive();
+            StartButton = new Button(20, 13, 18, 5, "Start");
+            StartButton.SetActive();
 
-            creditsButton = new Button(50, 13, 18, 5, "Credits");
+            CreditsButton = new Button(50, 13, 18, 5, "Credits");
 
-            quitButton = new Button(80, 13, 18, 5, "Quit");
+            QuitButton = new Button(80, 13, 18, 5, "Quit");
 
-            buttonList.Add(startButton);
-            buttonList.Add(creditsButton);
-            buttonList.Add(quitButton);
+
+            List<Button> ButtonList = new List<Button> { StartButton, CreditsButton, QuitButton };
+
+            //ButtonList.Add(StartButton);
+            //ButtonList.Add(CreditsButton);
+            //ButtonList.Add(QuitButton);
         }
 
         //properties
@@ -47,51 +50,80 @@ namespace LearningApp.GameSample.Windows
 
             titleTextBlock.Render();
 
-            startButton.Render();
-            creditsButton.Render();
-            quitButton.Render();
+            StartButton.Render();
+            CreditsButton.Render();
+            QuitButton.Render();
 
             Console.SetCursorPosition(0, 0);
         }
 
-        public void OnlyQuitButtonActive() 
+        public void ImplementKeyboardInput(ConsoleKeyInfo key) 
         {
-            quitButton.SetActive();
-            startButton.SetNotActive();
-            creditsButton.SetNotActive();
-            this.Render();
+            //char input = Convert.ToChar(Console.ReadKey());
+
+            // key = Console.ReadKey();
+            bool startbtn = StartButton.IsActive;
+            bool creditsbtn = CreditsButton.IsActive;
+            bool quitbtn = QuitButton.IsActive;
+
+            if (key.Key == ConsoleKey.RightArrow)
+            {
+                if (startbtn == true)
+                {        
+                    StartButton.SetNotActive();
+                    CreditsButton.SetActive();
+                    QuitButton.SetNotActive();
+                    this.Render();
+                }
+                else if (creditsbtn == true || quitbtn == true)
+                {
+                    StartButton.SetNotActive();                    
+                    CreditsButton.SetNotActive();
+                    QuitButton.SetActive();
+                    this.Render();
+                }
+            }
+            else if (key.Key == ConsoleKey.LeftArrow)
+            {
+                if (startbtn == true || creditsbtn == true )
+                {
+                    StartButton.SetActive();
+                    CreditsButton.SetNotActive();
+                    QuitButton.SetNotActive();
+                    this.Render();
+                }
+                else if ( quitbtn == true)
+                {
+                    StartButton.SetNotActive();
+                    CreditsButton.SetActive();
+                    QuitButton.SetNotActive();
+                    this.Render();
+                }
+            }
+                
+
+
+            //switch (key.Key)
+            //{
+            //    case ConsoleKey.Enter:
+            //        Console.WriteLine("enter");
+            //        break;\
+            //    case ConsoleKey.Escape:
+            //        Console.WriteLine("Escape");
+            //        break;
+            //    case ConsoleKey.LeftArrow:
+            //        Console.WriteLine("LeftArrow");
+            //        break;
+            //    case ConsoleKey.RightArrow:
+            //        Console.WriteLine("RightArrow");
+            //        break;
+            //    default:
+            //        break;
+            //}
+
         }
 
-        public void OnlyCreditsButtonActive()
-        {
-            creditsButton.SetActive();
-            startButton.SetNotActive();
-            quitButton.SetNotActive();
-            this.Render();
-        }
 
-        public void OnlyStartButtonActive()
-        {
-            quitButton.SetNotActive();
-            startButton.SetActive();
-            creditsButton.SetNotActive();
-            this.Render();
-        }
 
-        public void ActivateButton(int buttonNumber) 
-        {
-            if (buttonNumber == 0)
-            {
-                OnlyStartButtonActive();
-            }
-            else if (buttonNumber == 1)
-            {
-                OnlyCreditsButtonActive();
-            }
-            else if (buttonNumber == 2)
-            {
-                OnlyQuitButtonActive();
-            }
-        }
     }
 }

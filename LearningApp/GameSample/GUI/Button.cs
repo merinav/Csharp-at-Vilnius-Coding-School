@@ -12,7 +12,7 @@ namespace LearningApp.GameSample.GUI
         private Frame activeFrame;
         private Frame notActiveFrame;
         private TextLine textLine;
-        private bool isActive = false;
+        //private bool isActive = false;
 
         private const char activeChar = '#';
         private const char notActiveChar = '.';
@@ -28,17 +28,17 @@ namespace LearningApp.GameSample.GUI
 
         public void SetActive()
         {
-            isActive = true;
+            IsActive = true;
         }
 
-        public void SetNotActive() 
+        public void SetNotActive()
         {
-            isActive = false;
+            IsActive = false;
         }
 
         public override void Render()
         {
-            if (isActive)
+            if (IsActive)
             {
                 activeFrame.Render();
             }

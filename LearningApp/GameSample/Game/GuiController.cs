@@ -32,38 +32,29 @@ namespace LearningApp.GameSample.Game
             GameController gameController = new GameController();
         }
 
-       public void testPrinting() 
+        public void ReadKeyboardInput() 
         {
-            menuWindow.OnlyQuitButtonActive();
-
-            Console.ReadLine();
-            menuWindow.OnlyCreditsButtonActive(); 
-
-            Console.ReadLine();
-            menuWindow.OnlyStartButtonActive();
-
-        }
-
-
-
-        public void testInput() 
-        {
-
-            int activeButton = 0;
-            var consoleInput = Console.ReadKey(false).Key;
-
-            
-            while (consoleInput == ConsoleKey.RightArrow)
+            bool programRunning = true;
+            while (programRunning)
             {
-                for (int i = 0; i < 2; i++)
+
+                ConsoleKeyInfo key = Console.ReadKey();
+                if (key.Key == ConsoleKey.RightArrow
+                    || key.Key == ConsoleKey.LeftArrow
+                    || key.Key == ConsoleKey.Enter)
                 {
-                    menuWindow.ActivateButton(0);
-                    activeButton++;
+                    menuWindow.ImplementKeyboardInput(key);
                 }
-                break;
             }
+            
+            
+
 
             
+            
+        
+
+
 
         }
 
