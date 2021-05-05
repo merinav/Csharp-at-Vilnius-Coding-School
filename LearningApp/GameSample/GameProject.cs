@@ -12,7 +12,7 @@ namespace LearningApp.GameSample
 {
     class GameProject
     {
-        static void Main()
+        static void MainGP()
         {
            
             Console.CursorVisible = false;
