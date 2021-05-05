@@ -10,6 +10,7 @@ namespace LearningApp.GameSample.Game
     class GameController
 
     {
+        //methods
         public void StartGame()
         {
             GameScreen gameScreen = new GameScreen(200, 40);

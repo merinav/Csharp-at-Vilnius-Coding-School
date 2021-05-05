@@ -9,11 +9,8 @@ namespace LearningApp.GameSample.GUI
       abstract class GuiObject
 
     {
-        protected int X;
-        protected int Y;
-        protected int Width;
-        protected int Heigth;
-
+       
+        //constructor
         public GuiObject(int x, int y, int width, int height)
         {
             X = x;
@@ -22,13 +19,14 @@ namespace LearningApp.GameSample.GUI
             Heigth = height;
         }
 
-        //public int X { get; set; }
-        //public int Y { get; set; }
-        //public int Width { get; set; }
-        //public int Heigth { get; set; }
+        //properties
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Width { get; set; }
+        public int Heigth { get; set; }
 
 
-
+        //methods
         abstract public void Render(); 
         
     }

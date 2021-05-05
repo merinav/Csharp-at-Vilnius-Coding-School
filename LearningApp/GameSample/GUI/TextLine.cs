@@ -8,14 +8,17 @@ namespace LearningApp.GameSample.GUI
 {
     class TextLine : GuiObject
     {
+        //private fields
         private string data;
 
+        //constructor
         public TextLine(int x, int y, int width, string data)
             : base(x, y, width, 1)
         {
             this.data = data;
         }
 
+        //methods
         public override void Render()
         {
             if (data.Length >= Width)

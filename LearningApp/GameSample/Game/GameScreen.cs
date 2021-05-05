@@ -10,18 +10,20 @@ namespace LearningApp.GameSample.Game
     class GameScreen
 
     {
+        //private fields
         private int width;
         private int height;
-
         private Hero hero;
         private List<Enemy> enemies = new List<Enemy>();
 
+        //constructor
         public GameScreen(int width, int height)
         {
             this.width = width;
             this.height = height;
         }
 
+        //methods
         public void SetHero(Hero hero)
         {
             this.hero = hero;
@@ -62,7 +64,6 @@ namespace LearningApp.GameSample.Game
             }
             return null;
         }
-
         public void MoveAllEnemiesDown()
         {
             foreach (var enemy in enemies)

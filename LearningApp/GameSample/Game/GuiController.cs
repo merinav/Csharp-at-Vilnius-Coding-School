@@ -9,18 +9,19 @@ namespace LearningApp.GameSample.Game
 {
     class GuiController
     {
+        //private fields
         private CreditWindow creditWindow;
         private MenuWindow menuWindow;
         private EndGameWindow endWindow;
         private GameController gameController = new GameController();
 
-
+        //constructor
         public GuiController() {
             creditWindow = new CreditWindow();
             menuWindow = new MenuWindow();
             endWindow = new EndGameWindow();
         }
-
+        //methods
         public void ShowMenu() 
         {
             menuWindow.Render();
@@ -93,15 +94,6 @@ namespace LearningApp.GameSample.Game
                 }
 
             }
-            
-            
-
-
-            
-            
-        
-
-
 
         }
 

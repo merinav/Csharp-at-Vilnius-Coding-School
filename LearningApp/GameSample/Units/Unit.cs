@@ -8,11 +8,12 @@ namespace LearningApp.GameSample.Units
 {
     class Unit
     {
+        //private fields
         protected int X;
         protected int Y;
         protected string Name;
 
-
+        //constructor
         public Unit(int x, int y, string name) 
         {
             X = x;
@@ -20,6 +21,7 @@ namespace LearningApp.GameSample.Units
             Name = name;
         }
 
+        //methods
         public void PrintInfo()
         {
             Console.WriteLine($"Unit {Name}, is at X = {X} * Y = {Y}");

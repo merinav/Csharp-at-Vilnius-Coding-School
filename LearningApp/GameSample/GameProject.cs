@@ -25,7 +25,7 @@ namespace LearningApp.GameSample
             guiController.ReadKeyboardInput();
 
             Console.ReadKey();
-  
+
         }
     }
 }
