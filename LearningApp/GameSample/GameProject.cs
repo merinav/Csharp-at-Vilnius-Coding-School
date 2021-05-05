@@ -14,25 +14,18 @@ namespace LearningApp.GameSample
     {
         static void Main()
         {
-            //MenuWindow gameWindow = new MenuWindow();
-            //gameWindow.Render();
-
-            //CreditWindow creditWindow = new CreditWindow();
-            //creditWindow.Render();
-
+           
             Console.CursorVisible = false;
            
             GuiController guiController = new GuiController();
             guiController.ShowMenu();
-            //guiController.ShowCreditWindow();
 
             //guiController.testPrinting();
 
             guiController.ReadKeyboardInput();
 
             Console.ReadKey();
-
-           
+  
         }
     }
 }

@@ -8,8 +8,10 @@ namespace LearningApp.GameSample.GUI
 {
     sealed class TextBlock : GuiObject
     {
+        //private fields
         private List<TextLine> textBlocks = new List<TextLine>();
 
+        //constructor
         public TextBlock(int x, int y, int width, List<string> textList) : base(x, y, width, 0)
         {
             for (int i = 0; i < textList.Count; i++)
@@ -18,6 +20,7 @@ namespace LearningApp.GameSample.GUI
             }
         }
 
+        //methods
         public override void Render()
         {
             for (int i = 0; i < textBlocks.Count; i++)

@@ -10,12 +10,8 @@ namespace LearningApp.GameSample.Windows
     class MenuWindow : Window
     {
         //private fields
-        //private Button startButton;
-        //private Button creditsButton;
-        //private Button quitButton;
         private TextBlock titleTextBlock;
-        //private List<Button> buttonList = new List<Button> { };
-
+        
         //constructor
         public MenuWindow() : base(0, 0, 120, 30, "Game menu!", '%')
         {
@@ -28,19 +24,12 @@ namespace LearningApp.GameSample.Windows
 
             QuitButton = new Button(80, 13, 18, 5, "Quit");
 
-
             List<Button> ButtonList = new List<Button> { StartButton, CreditsButton, QuitButton };
-
-            //ButtonList.Add(StartButton);
-            //ButtonList.Add(CreditsButton);
-            //ButtonList.Add(QuitButton);
         }
-
         //properties
         public Button StartButton { get; set; }
         public Button CreditsButton { get; set; }
         public Button QuitButton { get; set; }
-
         public List<Button> ButtonList { get; set; }
 
         //methods
@@ -98,29 +87,7 @@ namespace LearningApp.GameSample.Windows
                     QuitButton.SetActive();
                     this.Render();
                 }
-        }
-
-        public void UserEnter()
-        {
-            bool startbtn = StartButton.IsActive;
-            bool creditsbtn = CreditsButton.IsActive;
-            bool quitbtn = QuitButton.IsActive;
-                if (startbtn == true)
-                {
-                    StartButton.SetNotActive();
-                    CreditsButton.SetActive();
-                    QuitButton.SetNotActive();
-                    this.Render();
-                }
-                else if (creditsbtn == true || quitbtn == true)
-                {
-                    StartButton.SetNotActive();
-                    CreditsButton.SetNotActive();
-                    QuitButton.SetActive();
-                    this.Render();
-                }
-        }
-
+        }       
         public bool ReturnStartButtonValue() 
         {
             return StartButton.IsActive;

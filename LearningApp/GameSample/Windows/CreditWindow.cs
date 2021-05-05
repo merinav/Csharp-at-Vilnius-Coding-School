@@ -9,9 +9,11 @@ namespace LearningApp.GameSample.Windows
 {
     sealed class CreditWindow : Window
     {
+        //private fields
         private Button backButton;
         private TextBlock creditTextBlock;
 
+        //constructor
         public CreditWindow() : base(28, 10, 60, 18, "Credits!", '@')
         {
             List<string> creditData = new List<string>();
@@ -37,6 +39,7 @@ namespace LearningApp.GameSample.Windows
             backButton.SetActive();
         }
 
+        //methods
         public override void Render()
         {
             base.Render();

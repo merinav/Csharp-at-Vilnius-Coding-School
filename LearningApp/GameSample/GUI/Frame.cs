@@ -9,16 +9,20 @@ namespace LearningApp.GameSample.GUI
     class Frame : GuiObject
 
     {
+        //private fields
         private char renderChar;
+
+        //constructor
         public Frame(int x, int y, int width, int height, char renderChar)
             : base(x, y, width, height)
         {
             this.renderChar = renderChar;
         }
 
-
+        //properties
         public char RenderChar { get; set; }
 
+        //methods
         public override void Render()
         {
             for (int i = 0; i < Heigth; i++)

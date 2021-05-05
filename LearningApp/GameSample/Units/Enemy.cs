@@ -8,13 +8,16 @@ namespace LearningApp.GameSample.Units
 {
     class Enemy : Unit
     {
+        //private fields
         private int id;
 
+        //constructor
         public Enemy(int id, int x, int y, string name) : base(x, y, name)
         {
             this.id = id;
         }
 
+        //methods
         public void MoveDown() 
         {
             Y++;
