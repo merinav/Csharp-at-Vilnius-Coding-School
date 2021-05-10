@@ -9,7 +9,7 @@ namespace LearningApp.Lesson16
 {
     class Program16
     {
-        static void Main() 
+        static void Main16() 
         {
             /*
             string testString = "Mano vardas Meri, man 34";
@@ -71,7 +71,7 @@ namespace LearningApp.Lesson16
             char[] charArray = new char[5];
             myString.CopyTo(0, charArray, 0, 5);
             Console.WriteLine(charArray);
-            */
+            
 
             File.WriteAllText("myFile.txt", "this is my file content");
             string myFileText = File.ReadAllText("myFile.txt");
@@ -80,6 +80,74 @@ namespace LearningApp.Lesson16
             File.AppendAllText("myFile.txt", " AND THIS IS APPENDED TEXT");
 
             File.Create("../myFile23214.txt");
+            */
+            
+            //------------------------
+
+            Dictionary<int, string> myDictionary = new Dictionary<int, string>();
+
+            myDictionary.Add(0, "nulinis");
+            myDictionary.Add(1, "pirmas");
+            myDictionary.Add(2, "antras");
+
+            Console.WriteLine(myDictionary[1]);
+            Console.WriteLine(myDictionary.Count);
+
+            myDictionary.Add(3, "trecias");
+            myDictionary.Remove(2);
+
+            foreach (var item in myDictionary)
+            {
+                Console.WriteLine(item);
+            }
+
+            //myDictionary.Clear();
+
+            string value = "!";
+            
+            Console.WriteLine(myDictionary.TryGetValue(2, out value));
+
+            
+            Console.WriteLine(myDictionary.ContainsValue(value));
+
+            
+            Console.WriteLine(myDictionary.ContainsKey(15));
+
+            foreach (KeyValuePair<int, string> keyValuePair in myDictionary)
+            {
+                Console.WriteLine("100");
+            }
+
+
+            Queue<string> myQueue = new Queue<string>();
+            myQueue.Enqueue("pirmas queue");
+            myQueue.Enqueue("antras queue");
+            myQueue.Enqueue("paskutinis queue");
+
+            myQueue.Dequeue();
+            
+
+            foreach (var item in myQueue)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine(myQueue.Peek());
+
+           
+            Console.WriteLine(myQueue.Contains("!"));
+
+            Stack<string> myStack = new Stack<string>();
+
+            myStack.Push("pirmas stack");
+            myStack.Push("antras stack");
+            myStack.Push("paskutinis stack");
+
+            myStack.Pop();
+
+            Console.WriteLine(myStack.Peek());
+            
+            Console.WriteLine(myStack.Count());
         }
     }
 }
