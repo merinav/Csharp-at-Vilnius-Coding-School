@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearningApp.Lesson18
 {
-    class Student
+    class Student 
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -19,5 +19,7 @@ namespace LearningApp.Lesson18
         public Student() {
 
         }
+
+        
     }
 }

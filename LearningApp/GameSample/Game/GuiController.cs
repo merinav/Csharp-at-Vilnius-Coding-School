@@ -37,16 +37,7 @@ namespace LearningApp.GameSample.Game
             bool gameRunning = false;
             bool creditWindowShowing = false;
 
-            /*
-            int ActiveButtonId;
-
-            for (int i = 0; i < ButtonList.Count; i++)
-            {
-                ButtonList[i].isActive;
-                i = ActiveButtonId;
-            }
-            */
-
+            
             while (programRunning)
             {
                 ConsoleKeyInfo key = Console.ReadKey();

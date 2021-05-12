@@ -11,7 +11,7 @@ namespace LearningApp.Lesson18
     {
 
 
-        static void Main() {
+        static void Main18() {
 
             /*
             List<int> data = new List<int>() { 0, 1, 2, 3, 56, 67};
@@ -58,6 +58,32 @@ namespace LearningApp.Lesson18
 
             Console.WriteLine(a.PowerTwo());
 
+            var result1 = from s in students
+                         where s.Age > 21
+                         select s;
+
+            var result2 = from s in students
+                          where s.IsGettingTuition == true && s.AverageMark > 8
+                          select s.Id;
+
+            var result3 = from s in students
+                          where s.AverageMark > 4 && s.Name.Length <= 8
+                          select s.Name;
+
+            List<string> list1 = new List<string>();
+            list1 = result3.ToList();
+
+            foreach (var item in list1)
+            {
+                Console.WriteLine(item);
+            }
+
+            int[] idArray = new int[] { };
+            idArray = result2.ToArray();
+
+
+
+            
 
         }
 
