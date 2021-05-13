@@ -8,7 +8,6 @@ namespace LearningApp.DiceMenu.GUI
 {
     abstract class GuiObject
     {
-
         //constructor
         public GuiObject(int x, int y, int width, int height)
         {

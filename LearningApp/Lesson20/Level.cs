@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LearningApp.DiceMenu.Windows
+namespace LearningApp.Lesson20
 {
-    class PlayerSelectionMenu
+    enum Status
     {
+        Bad,
+        Ok,
+        Good
     }
 }
