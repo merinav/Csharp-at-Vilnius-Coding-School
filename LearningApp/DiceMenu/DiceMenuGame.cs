@@ -13,10 +13,10 @@ namespace LearningApp.DiceMenu
         static void Main() 
         {
 
-            WindowController windowController = new WindowController();
-            windowController.ShowMainWindow();
+            WindowRenderer windowController = new WindowRenderer();
+            //windowController.ShowMainWindow();
 
-
+            windowController.ShowPlayerSelectionWindow();
 
         }
     }

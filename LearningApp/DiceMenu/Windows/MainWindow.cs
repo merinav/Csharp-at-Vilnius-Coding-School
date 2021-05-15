@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LearningApp.DiceMenu.GUI
-{
+{   
+    /// <summary>
+    /// Shows main menu
+    /// </summary>
     class MainWindow : Window 
     {
 

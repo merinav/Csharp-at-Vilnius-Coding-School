@@ -1,4 +1,5 @@
 ﻿using LearningApp.DiceMenu.GUI;
+using LearningApp.DiceMenu.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,23 +9,29 @@ using System.Threading.Tasks;
 namespace LearningApp.DiceMenu.GameControl
 {
     
-    ///
-    /// will control windows
-    ///
+    /// <summary>
+    /// Controlls which window to show
+    /// </summary>
 
-    class WindowController
+    class WindowRenderer
     {
         //private fields
        
         private MainWindow mainWindow;
-        
+        private PlayerSelectionWindow playerSelectionWindow;
 
         //constructor
-        public WindowController()
+        public WindowRenderer()
         {
             mainWindow = new MainWindow();
-            
+            playerSelectionWindow = new PlayerSelectionWindow();
         }
+
+        internal void ShowPlayerSelectionWindow()
+        {
+            playerSelectionWindow.Render();
+        }
+
         //methods
         public void ShowMainWindow()
         {
