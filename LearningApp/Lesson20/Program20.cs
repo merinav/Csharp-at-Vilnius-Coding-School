@@ -10,7 +10,7 @@ namespace LearningApp.Lesson20
     class Program20
     {
 
-        static void Main()
+        static void Main20()
         {
 
             List<Student> students = new List<Student>
