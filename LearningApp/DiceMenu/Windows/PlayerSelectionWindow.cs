@@ -18,11 +18,10 @@ namespace LearningApp.DiceMenu.Windows
         public PlayerSelectionWindow() : base(0, 0, 120, 30, "", '%')
         {
             titleTextBlock = new TextBlock(10, 5, 100, new List<String> { "Choose number of players",
-                "Do this with arrow buttons and press enter"});
+                "Do this with arrow buttons and then Enter"});
 
             P2Button = new Button(45, 11, 15, 4, "2");
             //StartButton.SetActive();
-
             P3Button = new Button(61, 11, 15, 4, "3");
             P4Button = new Button(45, 15, 15, 4, "4");
             P5Button = new Button(61, 15, 15, 4, "5");

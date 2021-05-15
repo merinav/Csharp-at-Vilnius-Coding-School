@@ -14,9 +14,10 @@ namespace LearningApp.DiceMenu
         {
 
             WindowRenderer windowController = new WindowRenderer();
-            //windowController.ShowMainWindow();
+           
+            windowController.ShowGameOverWindow();
 
-            windowController.ShowPlayerSelectionWindow();
+
 
         }
     }

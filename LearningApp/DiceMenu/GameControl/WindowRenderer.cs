@@ -19,15 +19,21 @@ namespace LearningApp.DiceMenu.GameControl
        
         private MainWindow mainWindow;
         private PlayerSelectionWindow playerSelectionWindow;
+        private DiceSelectionWindow diceSelectionWindow;
+        private GameWindow gameWindow;
+        private GameOverWindow gameOverWindow;
 
         //constructor
         public WindowRenderer()
         {
             mainWindow = new MainWindow();
             playerSelectionWindow = new PlayerSelectionWindow();
+            diceSelectionWindow = new DiceSelectionWindow();
+            gameWindow = new GameWindow();
+            gameOverWindow = new GameOverWindow();
         }
 
-        internal void ShowPlayerSelectionWindow()
+        public void ShowPlayerSelectionWindow()
         {
             playerSelectionWindow.Render();
         }
@@ -37,6 +43,20 @@ namespace LearningApp.DiceMenu.GameControl
         {
             mainWindow.Render();
         }
-        
+
+        public void ShowDiceSelectionWindow()
+        {
+            diceSelectionWindow.Render();
+        }
+
+        public void ShowGameWindow()
+        {
+            gameWindow.Render();
+        }
+
+        public void ShowGameOverWindow()
+        {
+            gameOverWindow.Render();
+        }
     }
 }
