@@ -1,4 +1,5 @@
-﻿using LearningApp.DiceMenu.GUI;
+﻿using LearningApp.DiceMenu.Constants;
+using LearningApp.DiceMenu.GUI;
 using LearningApp.DiceMenu.Windows;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace LearningApp.DiceMenu.GameControl
         private DiceSelectionWindow diceSelectionWindow;
         private GameWindow gameWindow;
         private GameOverWindow gameOverWindow;
+        //private WindowType currentActiveWindow;
+
 
         //constructor
         public WindowRenderer()
@@ -33,29 +36,38 @@ namespace LearningApp.DiceMenu.GameControl
             gameOverWindow = new GameOverWindow();
         }
 
-        public void ShowPlayerSelectionWindow()
-        {
-            playerSelectionWindow.Render();
-        }
+        public WindowType CurrentActiveWindow { get; set; }
 
+        
         //methods
         public void ShowMainWindow()
         {
+            CurrentActiveWindow = WindowType.MainMenu;
             mainWindow.Render();
         }
 
+        public void ShowPlayerSelectionWindow()
+        {
+            CurrentActiveWindow = WindowType.PlayerSelection;
+            playerSelectionWindow.Render();
+        }
+
+
         public void ShowDiceSelectionWindow()
         {
+            CurrentActiveWindow = WindowType.DiceSelection;
             diceSelectionWindow.Render();
         }
 
         public void ShowGameWindow()
         {
+            CurrentActiveWindow = WindowType.Game;
             gameWindow.Render();
         }
 
         public void ShowGameOverWindow()
         {
+            CurrentActiveWindow = WindowType.GameOver;
             gameOverWindow.Render();
         }
     }
