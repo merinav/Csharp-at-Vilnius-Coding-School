@@ -11,19 +11,19 @@ namespace LearningApp.DiceMenu.GameControl
     {
         private bool isGameRunning;
         //private WindowType currentActiveWindow;
-        private WindowRenderer windowController = new WindowRenderer();
+        private WindowRenderer windowControllerForIR;
 
 
-        public InputReader()
+        public InputReader(WindowRenderer windowControllerForIR)
         {
-            
+            this.windowControllerForIR = windowControllerForIR;
         }
 
         public void StartHandlingInput() 
-        {   
+        {
 
 
-
+        
 
 
             isGameRunning = true;
@@ -33,33 +33,33 @@ namespace LearningApp.DiceMenu.GameControl
                 {
                     var key = Console.ReadKey();
 
-
-                    switch (windowController.CurrentActiveWindow)
+                    switch (windowControllerForIR.CurrentActiveWindow)
                     {
                         
                         case WindowType.MainMenu:
-
                             switch (key.Key)
                             {
                                 case ConsoleKey.Enter:
-                                    Console.WriteLine("ENTER");
-                                    break;
-                                case ConsoleKey.LeftArrow:
-                                    break;
-                                case ConsoleKey.UpArrow:
-                                    break;
-                                case ConsoleKey.RightArrow:
-                                    break;
-                                case ConsoleKey.DownArrow:
-                                    break;
-                                case ConsoleKey.M:
+                                    if (windowControllerForIR.PlayButtonActive)
+                                    {
+                                        Console.WriteLine("PALEISTI ZIADIMA AAA");
+                                        //PALEISTI ZAIDIMA
+                                    }
+                                    else if (windowControllerForIR.QuitButtonActiveMainW)
+                                    {
+                                        isGameRunning = false;
+                                        Console.Clear();
+                                    }
+                                    //butu gerai padaryt exception jei abu false
                                     break;
                                 case ConsoleKey.P:
+                                    windowControllerForIR.SetActivePlayButton(true);
+                                    windowControllerForIR.SetActiveQuitButtonMainWindow(false);
                                     break;
                                 case ConsoleKey.Q:
-                                    break;
-                                case ConsoleKey.R:
-                                    break;
+                                    windowControllerForIR.SetActivePlayButton(false);
+                                    windowControllerForIR.SetActiveQuitButtonMainWindow(true);                     
+                                    break; 
                                 default:
                                     break;
                             }
@@ -80,7 +80,30 @@ namespace LearningApp.DiceMenu.GameControl
 
 
 
-                    
+                    //switch (key.Key)
+                    //{
+                    //    case ConsoleKey.Enter:
+                    //        Console.WriteLine("ENTER");
+                    //        break;
+                    //    case ConsoleKey.LeftArrow:
+                    //        break;
+                    //    case ConsoleKey.UpArrow:
+                    //        break;
+                    //    case ConsoleKey.RightArrow:
+                    //        break;
+                    //    case ConsoleKey.DownArrow:
+                    //        break;
+                    //    case ConsoleKey.M:
+                    //        break;
+                    //    case ConsoleKey.P:
+                    //        break;
+                    //    case ConsoleKey.Q:
+                    //        break;
+                    //    case ConsoleKey.R:
+                    //        break;
+                    //    default:
+                    //        break;
+                    //}
 
 
 

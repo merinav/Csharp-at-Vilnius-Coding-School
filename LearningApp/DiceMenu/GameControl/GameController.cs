@@ -8,14 +8,7 @@ namespace LearningApp.DiceMenu.GameControl
 {
     class GameController
     {
-        WindowRenderer windowController = new WindowRenderer();
-        InputReader inputReader = new InputReader();
-        
-        public void StartGame() 
-        {
-            windowController.ShowMainWindow();
-            inputReader.StartHandlingInput(); 
-        }
+       
 
     }
 }

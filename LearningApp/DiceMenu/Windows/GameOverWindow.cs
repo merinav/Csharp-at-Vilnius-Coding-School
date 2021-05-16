@@ -49,5 +49,15 @@ namespace LearningApp.DiceMenu.Windows
 
             Console.SetCursorPosition(0, 0);
         }
+
+        public void SetActive(Button button)
+        {
+            button.SetActive();
+        }
+
+        public void SetNotActive(Button button)
+        {
+            button.SetNotActive();
+        }
     }
 }

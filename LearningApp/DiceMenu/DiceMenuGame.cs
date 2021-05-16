@@ -12,10 +12,15 @@ namespace LearningApp.DiceMenu
     {
         static void Main() 
         {
-            GameController gameController = new GameController();
-            gameController.StartGame();
-            
+            //GameController gameController = new GameController();
+            //gameController.StartGame();
 
+            WindowRenderer windowController = new WindowRenderer();
+            InputReader inputReader = new InputReader(windowController);
+           
+            windowController.ShowMainWindow();
+            inputReader.StartHandlingInput();
+           
 
 
         }

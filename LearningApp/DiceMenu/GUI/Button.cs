@@ -30,11 +30,13 @@ namespace LearningApp.DiceMenu.GUI
         public void SetActive()
         {
             IsActive = true;
+            this.Render();
         }
 
         public void SetNotActive()
         {
             IsActive = false;
+            this.Render();
         }
 
         public override void Render()

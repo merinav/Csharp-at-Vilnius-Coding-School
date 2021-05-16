@@ -23,8 +23,7 @@ namespace LearningApp.DiceMenu.GUI
                 "Choose by clicking P or Q on your keyboard"});
 
             PlayButton = new Button(30, 13, 18, 5, "PLAY");
-            //StartButton.SetActive();
-
+            
             QuitButton = new Button(70, 13, 18, 5, "QUIT");
 
             List<Button> ButtonList = new List<Button> { PlayButton, QuitButton };
@@ -45,6 +44,16 @@ namespace LearningApp.DiceMenu.GUI
             QuitButton.Render();
 
             Console.SetCursorPosition(0, 0);
+        }
+
+        public void SetActive(Button button) 
+        {
+            button.SetActive();
+        }
+
+        public void SetNotActive(Button button)
+        {
+            button.SetNotActive();
         }
 
     }
