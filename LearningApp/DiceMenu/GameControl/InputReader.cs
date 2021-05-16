@@ -23,9 +23,6 @@ namespace LearningApp.DiceMenu.GameControl
         {
 
 
-        
-
-
             isGameRunning = true;
             do
             {
@@ -35,15 +32,13 @@ namespace LearningApp.DiceMenu.GameControl
 
                     switch (windowControllerForIR.CurrentActiveWindow)
                     {
-                        
                         case WindowType.MainMenu:
                             switch (key.Key)
                             {
                                 case ConsoleKey.Enter:
                                     if (windowControllerForIR.PlayButtonActive)
                                     {
-                                        Console.WriteLine("PALEISTI ZIADIMA AAA");
-                                        //PALEISTI ZAIDIMA
+                                        windowControllerForIR.ShowPlayerSelectionWindow();
                                     }
                                     else if (windowControllerForIR.QuitButtonActiveMainW)
                                     {
@@ -63,7 +58,6 @@ namespace LearningApp.DiceMenu.GameControl
                                 default:
                                     break;
                             }
-
                             break;
                         case WindowType.PlayerSelection:
                             
@@ -72,7 +66,43 @@ namespace LearningApp.DiceMenu.GameControl
                         case WindowType.Game:
                             
                         case WindowType.GameOver:
-                            
+                            switch (key.Key)
+                            {
+                                case ConsoleKey.Enter:
+                                    if (windowControllerForIR.ReplayButtonActive)
+                                    {
+                                        windowControllerForIR.ShowPlayerSelectionWindow();
+                                    }
+                                    else if (windowControllerForIR.MenuButtonActive)
+                                    {
+                                        windowControllerForIR.ShowMainWindow();                                       
+                                    }
+                                    else if (windowControllerForIR.QuitButtonActiveGameOverW)
+                                    {
+                                        isGameRunning = false;
+                                        Console.Clear();
+                                    }
+                                    //butu gerai padaryt exception jei visi false
+                                    break;
+                                case ConsoleKey.R:
+                                    windowControllerForIR.SetActiveReplayButton(true);
+                                    windowControllerForIR.SetActiveMenuButton(false);
+                                    windowControllerForIR.SetActiveQuitButtonGameOverWindow(false);
+                                    break;
+                                case ConsoleKey.M:
+                                    windowControllerForIR.SetActiveReplayButton(false);
+                                    windowControllerForIR.SetActiveMenuButton(true);
+                                    windowControllerForIR.SetActiveQuitButtonGameOverWindow(false);
+                                    break;
+                                case ConsoleKey.Q:
+                                    windowControllerForIR.SetActiveReplayButton(false);
+                                    windowControllerForIR.SetActiveMenuButton(false);
+                                    windowControllerForIR.SetActiveQuitButtonGameOverWindow(true);
+                                    break;
+                                default:
+                                    break;
+                            } break;
+
                         case WindowType.None:
                             
                         default: throw new Exception("neapdorota");

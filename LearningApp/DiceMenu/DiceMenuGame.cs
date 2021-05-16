@@ -17,8 +17,8 @@ namespace LearningApp.DiceMenu
 
             WindowRenderer windowController = new WindowRenderer();
             InputReader inputReader = new InputReader(windowController);
-           
-            windowController.ShowMainWindow();
+
+            windowController.ShowGameOverWindow();
             inputReader.StartHandlingInput();
            
 
