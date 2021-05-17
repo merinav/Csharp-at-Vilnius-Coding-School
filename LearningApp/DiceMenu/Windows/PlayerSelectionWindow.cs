@@ -21,14 +21,14 @@ namespace LearningApp.DiceMenu.Windows
                 "Do this with arrow buttons and then Enter"});
 
             P2Button = new Button(45, 11, 15, 4, "2");
-            //StartButton.SetActive();
+            P2Button.SetActive();
             P3Button = new Button(61, 11, 15, 4, "3");
             P4Button = new Button(45, 15, 15, 4, "4");
             P5Button = new Button(61, 15, 15, 4, "5");
             P6Button = new Button(45, 19, 15, 4, "6");
             P7Button = new Button(61, 19, 15, 4, "7");
 
-            List<Button> ButtonList = new List<Button> { P2Button, P3Button, P4Button, 
+            List<Button> PlayerButtonList = new List<Button> { P2Button, P3Button, P4Button, 
             P5Button, P6Button, P7Button };
         }
         //properties
@@ -38,7 +38,8 @@ namespace LearningApp.DiceMenu.Windows
         public Button P5Button { get; set; }
         public Button P6Button { get; set; }
         public Button P7Button { get; set; }
-        public List<Button> ButtonList { get; set; }
+        public List<Button> PlayerButtonList { get; private set; }
+        public int ButtonID { get; set; }
 
         //methods
         public override void Render()
@@ -55,6 +56,11 @@ namespace LearningApp.DiceMenu.Windows
             P7Button.Render();
 
             Console.SetCursorPosition(0, 0);
+        }
+
+        public void SetActive(Button button)
+        {
+            button.SetActive();
         }
 
     }

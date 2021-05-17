@@ -8,7 +8,9 @@ namespace LearningApp.DiceMenu.GameControl
 {
     class GameController
     {
-       
-
+        internal void StartGame(int diceNo)
+        {
+            Console.WriteLine("blablabla" + diceNo);
+        }
     }
 }

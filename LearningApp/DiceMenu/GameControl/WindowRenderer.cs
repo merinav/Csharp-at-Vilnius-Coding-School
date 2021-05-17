@@ -21,7 +21,6 @@ namespace LearningApp.DiceMenu.GameControl
         private MainWindow mainWindow;
         private PlayerSelectionWindow playerSelectionWindow;
         private DiceSelectionWindow diceSelectionWindow;
-        private GameWindow gameWindow;
         private GameOverWindow gameOverWindow;
         //private WindowType currentActiveWindow;
 
@@ -32,7 +31,6 @@ namespace LearningApp.DiceMenu.GameControl
             mainWindow = new MainWindow();
             playerSelectionWindow = new PlayerSelectionWindow();
             diceSelectionWindow = new DiceSelectionWindow();
-            gameWindow = new GameWindow();
             gameOverWindow = new GameOverWindow();
         }
 
@@ -62,12 +60,6 @@ namespace LearningApp.DiceMenu.GameControl
         {
             CurrentActiveWindow = WindowType.DiceSelection;
             diceSelectionWindow.Render();
-        }
-
-        public void ShowGameWindow()
-        {
-            CurrentActiveWindow = WindowType.Game;
-            gameWindow.Render();
         }
 
         public void ShowGameOverWindow()
@@ -145,5 +137,20 @@ namespace LearningApp.DiceMenu.GameControl
                 QuitButtonActiveGameOverW = false;
             }
         }
+
+        public void SetDiceNumber(int number)
+        {
+            string strNumber = number.ToString();
+            diceSelectionWindow.DiceButton = new Button(50, 13, 18, 5, strNumber);
+            diceSelectionWindow.Render();
+        }
+
+        public void SetButtonActive(int id)
+        {
+            Button playerButton =  playerSelectionWindow.PlayerButtonList[id];
+            playerButton.SetActive();
+        }
+
+
     }
 }

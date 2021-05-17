@@ -20,10 +20,10 @@ namespace LearningApp.DiceMenu.Windows
                 "How many dice shall each player play?",
                 "Choose by clicking + or - and then Enter"});
 
-            diceButton = new Button(50, 13, 18, 5, "5");
+            DiceButton = new Button(50, 13, 18, 5, "5");
         }
         //properties
-        public Button diceButton { get; set; }
+        public Button DiceButton { get; set; }
        
         //methods
         public override void Render()
@@ -32,7 +32,7 @@ namespace LearningApp.DiceMenu.Windows
 
             titleTextBlock.Render();
 
-            diceButton.Render();
+            DiceButton.Render();
 
             Console.SetCursorPosition(0, 0);
         }
