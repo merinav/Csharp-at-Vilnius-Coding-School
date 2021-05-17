@@ -14,32 +14,26 @@ namespace LearningApp.DiceMenu.Windows
     {
         private TextBlock titleTextBlock;
 
+        private List<Button> playerButtonList = new List<Button>();
+
         //constructor
         public PlayerSelectionWindow() : base(0, 0, 120, 30, "", '%')
         {
             titleTextBlock = new TextBlock(10, 5, 100, new List<String> { "Choose number of players",
                 "Do this with arrow buttons and then Enter"});
 
-            P2Button = new Button(45, 11, 15, 4, "2");
-            P2Button.SetActive();
-            P3Button = new Button(61, 11, 15, 4, "3");
-            P4Button = new Button(45, 15, 15, 4, "4");
-            P5Button = new Button(61, 15, 15, 4, "5");
-            P6Button = new Button(45, 19, 15, 4, "6");
-            P7Button = new Button(61, 19, 15, 4, "7");
+            playerButtonList.Add(new Button(45, 11, 15, 4, "2"));
+            playerButtonList.Add(new Button(61, 11, 15, 4, "3"));
+            playerButtonList.Add(new Button(45, 15, 15, 4, "4"));
+            playerButtonList.Add(new Button(61, 15, 15, 4, "5"));
+            playerButtonList.Add(new Button(45, 19, 15, 4, "6"));
+            playerButtonList.Add(new Button(61, 19, 15, 4, "7"));
 
-            List<Button> PlayerButtonList = new List<Button> { P2Button, P3Button, P4Button, 
-            P5Button, P6Button, P7Button };
+            playerButtonList[ActiveButtonID].IsActive = true;
+
         }
         //properties
-        public Button P2Button { get; set; }
-        public Button P3Button { get; set; }
-        public Button P4Button { get; set; }
-        public Button P5Button { get; set; }
-        public Button P6Button { get; set; }
-        public Button P7Button { get; set; }
-        public List<Button> PlayerButtonList { get; private set; }
-        public int ButtonID { get; set; }
+        public int ActiveButtonID { get; set; } = 0;
 
         //methods
         public override void Render()
@@ -48,20 +42,64 @@ namespace LearningApp.DiceMenu.Windows
 
             titleTextBlock.Render();
 
-            P2Button.Render();
-            P3Button.Render();
-            P4Button.Render();
-            P5Button.Render();
-            P6Button.Render();
-            P7Button.Render();
 
+            for (int i = 0; i < playerButtonList.Count; i++)
+            {
+                playerButtonList[i].Render();
+            }
+
+            
             Console.SetCursorPosition(0, 0);
         }
 
-        public void SetActive(Button button)
+        internal void MoveNext()
         {
-            button.SetActive();
+            playerButtonList[ActiveButtonID].IsActive = false;
+            ActiveButtonID++;
+            if (ActiveButtonID >= playerButtonList.Count)
+            {
+                ActiveButtonID = 0;
+            }
+            playerButtonList[ActiveButtonID].IsActive = true;
+            this.Render();
         }
 
+        internal void MovePrevious()
+        {
+            playerButtonList[ActiveButtonID].IsActive = false;
+            ActiveButtonID--;
+            if (ActiveButtonID < 0)
+            {
+                ActiveButtonID = 0;
+            }
+            playerButtonList[ActiveButtonID].IsActive = true;
+            this.Render();
+        }
+
+        internal void MoveUp()
+        {
+            playerButtonList[ActiveButtonID].IsActive = false;
+            ActiveButtonID-=2;
+            if (ActiveButtonID < 0)
+            {
+                ActiveButtonID = 0;
+            }
+            playerButtonList[ActiveButtonID].IsActive = true;
+            this.Render();
+        }
+
+        internal void MoveDown()
+        {
+            playerButtonList[ActiveButtonID].IsActive = false;
+            ActiveButtonID += 2;
+            if (ActiveButtonID >= playerButtonList.Count)
+            {
+                ActiveButtonID = 0;
+            }
+            playerButtonList[ActiveButtonID].IsActive = true;
+            this.Render();
+        }
+
+       
     }
 }

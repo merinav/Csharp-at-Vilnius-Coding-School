@@ -110,6 +110,31 @@ namespace LearningApp.DiceMenu.GameControl
             }
         }
 
+        public void MovePlayerWindowToNext()
+        {
+            playerSelectionWindow.MoveNext();  
+        }
+
+        internal void MovePlayerWindowToPrevious()
+        {
+            playerSelectionWindow.MovePrevious();
+        }
+
+        internal void MovePlayerWindowUp()
+        {
+            playerSelectionWindow.MoveUp();
+        }
+
+        internal void MovePlayerWindowDown()
+        {
+            playerSelectionWindow.MoveDown();
+        }
+
+        public int ReturnPlayerActiveButtonID() 
+        {
+            return playerSelectionWindow.ActiveButtonID;  
+        }
+
         public void SetActiveMenuButton(bool set)
         {
             if (set)
@@ -123,6 +148,8 @@ namespace LearningApp.DiceMenu.GameControl
                 MenuButtonActive = false;
             }
         }
+
+        
 
         public void SetActiveQuitButtonGameOverWindow(bool set)
         {
@@ -145,11 +172,11 @@ namespace LearningApp.DiceMenu.GameControl
             diceSelectionWindow.Render();
         }
 
-        public void SetButtonActive(int id)
-        {
-            Button playerButton =  playerSelectionWindow.PlayerButtonList[id];
-            playerButton.SetActive();
-        }
+        //public void SetButtonActive(int id)
+        //{
+        //    Button playerButton =  playerSelectionWindow.PlayerButtonList[id];
+        //    playerButton.SetActive();
+        //}
 
 
     }

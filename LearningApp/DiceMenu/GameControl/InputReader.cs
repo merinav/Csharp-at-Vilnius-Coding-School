@@ -23,7 +23,6 @@ namespace LearningApp.DiceMenu.GameControl
         public void StartHandlingInput() 
         {
             int playerNo;
-            int playerId = 0;
             int diceNo = 5;
             isGameRunning = true;
             do
@@ -65,32 +64,26 @@ namespace LearningApp.DiceMenu.GameControl
 
                             //PLAYER SELECTION
                         case WindowType.PlayerSelection:
-
                             switch (key.Key)
                             {
                                 case ConsoleKey.Enter:
-                                    
+                                    windowRenderer.ShowDiceSelectionWindow();
                                     break;
                                 case ConsoleKey.RightArrow:
-                                    playerId++;
-                                    windowRenderer.SetButtonActive(playerId);
+                                    windowRenderer.MovePlayerWindowToNext();
                                     break;
                                 case ConsoleKey.LeftArrow:
-                                    
+                                    windowRenderer.MovePlayerWindowToPrevious();
                                     break;
                                 case ConsoleKey.UpArrow:
-                                    
+                                    windowRenderer.MovePlayerWindowUp();
                                     break;
                                 case ConsoleKey.DownArrow:
-                                    
+                                    windowRenderer.MovePlayerWindowDown();
                                     break;
                                 default:
                                     break;
                             }
-
-
-
-
                             break;
                             
                             //DICE SELECTION
@@ -99,7 +92,8 @@ namespace LearningApp.DiceMenu.GameControl
                             {                               
                                 case ConsoleKey.Enter:
                                     Console.Clear();
-                                    gameController.StartGame(diceNo);
+                                    playerNo = windowRenderer.ReturnPlayerActiveButtonID();
+                                    gameController.StartGame(playerNo, diceNo);
                                     break;
                                 case ConsoleKey.RightArrow:
                                     diceNo++;
@@ -112,15 +106,11 @@ namespace LearningApp.DiceMenu.GameControl
                                 default:
                                     break;
                             }
-
-
-
                             break;
                             
                         //    //GAME
                         //case WindowType.Game:
                         //    break;
-
 
                             //GAME OVER
                         case WindowType.GameOver:
@@ -137,8 +127,8 @@ namespace LearningApp.DiceMenu.GameControl
                                     }
                                     else if (windowRenderer.QuitButtonActiveGameOverW)
                                     {
-                                        isGameRunning = false;
                                         Console.Clear();
+                                        isGameRunning = false;
                                     }
                                     //butu gerai padaryt exception jei visi false
                                     break;
@@ -161,40 +151,9 @@ namespace LearningApp.DiceMenu.GameControl
                                     break;
                             } break;
 
-                        case WindowType.None:
-                            
+                        case WindowType.None:                            
                         default: throw new Exception("neapdorota");
                     }
-
-
-
-                    //switch (key.Key)
-                    //{
-                    //    case ConsoleKey.Enter:
-                    //        Console.WriteLine("ENTER");
-                    //        break;
-                    //    case ConsoleKey.LeftArrow:
-                    //        break;
-                    //    case ConsoleKey.UpArrow:
-                    //        break;
-                    //    case ConsoleKey.RightArrow:
-                    //        break;
-                    //    case ConsoleKey.DownArrow:
-                    //        break;
-                    //    case ConsoleKey.M:
-                    //        break;
-                    //    case ConsoleKey.P:
-                    //        break;
-                    //    case ConsoleKey.Q:
-                    //        break;
-                    //    case ConsoleKey.R:
-                    //        break;
-                    //    default:
-                    //        break;
-                    //}
-
-
-
                 }
             } while (isGameRunning);
 

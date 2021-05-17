@@ -16,9 +16,9 @@ namespace LearningApp.DiceMenu.Windows
         //constructor
         public GameOverWindow() : base(0, 0, 120, 30, "", '%')
         {
-            titleTextBlock = new TextBlock(10, 5, 100, new List<String> { "THIS IS YOUR GAME OF DICE",
-                "Do you want to play or quit?",
-                "Choose by clicking P or Q on your keyboard"});
+            titleTextBlock = new TextBlock(10, 5, 100, new List<String> {
+                "Do you wish to replay, go to main menu or quit?",
+                "Choose by clicking R, M or Q on your keyboard, then press Enter"});
 
             ReplayButton = new Button(30, 13, 18, 5, "Replay Game");
             //StartButton.SetActive();
