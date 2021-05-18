@@ -94,6 +94,7 @@ namespace LearningApp.DiceMenu.GameControl
                                     Console.Clear();
                                     playerNo = windowRenderer.ReturnPlayerActiveButtonID();
                                     gameController.StartGame(playerNo, diceNo);
+                                    windowRenderer.ShowGameOverWindow();
                                     break;
                                 case ConsoleKey.RightArrow:
                                     diceNo++;
@@ -107,11 +108,7 @@ namespace LearningApp.DiceMenu.GameControl
                                     break;
                             }
                             break;
-                            
-                        //    //GAME
-                        //case WindowType.Game:
-                        //    break;
-
+                                                   
                             //GAME OVER
                         case WindowType.GameOver:
                             switch (key.Key)

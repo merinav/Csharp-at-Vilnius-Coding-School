@@ -33,13 +33,6 @@ namespace LearningApp.DiceMenu.GameControl
             Console.WriteLine("Press Enter to continue");
 
             Console.ReadLine();
-
-            WindowRenderer windowController = new WindowRenderer();
-            InputReader inputReader = new InputReader(windowController);
-
-            
-            windowController.ShowGameOverWindow();
-            inputReader.StartHandlingInput();
         }
     }
 }
