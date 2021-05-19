@@ -167,17 +167,12 @@ namespace LearningApp.DiceMenu.GameControl
 
         public void SetDiceNumber(int number)
         {
-            string strNumber = number.ToString();
-            diceSelectionWindow.DiceButton = new Button(50, 13, 18, 5, strNumber);
-            diceSelectionWindow.Render();
+                string strNumber = number.ToString();
+                diceSelectionWindow.DiceButton = new Button(50, 13, 18, 5, strNumber);
+                diceSelectionWindow.Render();
         }
 
-        //public void SetButtonActive(int id)
-        //{
-        //    Button playerButton =  playerSelectionWindow.PlayerButtonList[id];
-        //    playerButton.SetActive();
-        //}
-
+        
 
     }
 }

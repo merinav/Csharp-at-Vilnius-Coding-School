@@ -18,9 +18,9 @@ namespace LearningApp.DiceMenu.Windows
         {
             titleTextBlock = new TextBlock(10, 5, 100, new List<String> { 
                 "How many dice shall each player play?",
-                "Choose by clicking + or - and then Enter"});
+                "Choose by clicking right or left arrows and then Enter"});
 
-            DiceButton = new Button(50, 13, 18, 5, "5");
+            DiceButton = new Button(50, 13, 18, 5, "3");
         }
         //properties
         public Button DiceButton { get; set; }

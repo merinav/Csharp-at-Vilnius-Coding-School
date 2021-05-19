@@ -23,7 +23,7 @@ namespace LearningApp.DiceMenu.GameControl
         public void StartHandlingInput() 
         {
             int playerNo;
-            int diceNo = 5;
+            int diceNo = 3;
             isGameRunning = true;
             do
             {
@@ -97,11 +97,32 @@ namespace LearningApp.DiceMenu.GameControl
                                     windowRenderer.ShowGameOverWindow();
                                     break;
                                 case ConsoleKey.RightArrow:
+                                    if (diceNo >= 0 && diceNo < 5)
+                                    {
                                     diceNo++;
+                                    }
+                                        else if (diceNo < 0)
+                                        {
+                                        diceNo = 1;
+                                        }   else
+                                                {
+                                                diceNo--;
+                                                }
                                     windowRenderer.SetDiceNumber(diceNo);
                                     break;
                                 case ConsoleKey.LeftArrow:
+                                    if(diceNo > 1 && diceNo <= 5)
+                                    {
                                     diceNo--;
+                                    }
+                                        else if (diceNo <= 0 || diceNo == 1)
+                                        {
+                                        diceNo = 1;
+                                        }
+                                            else
+                                            {
+                                            diceNo--;
+                                            }
                                     windowRenderer.SetDiceNumber(diceNo);
                                     break;
                                 default:
