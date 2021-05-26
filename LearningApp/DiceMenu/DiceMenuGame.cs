@@ -10,7 +10,7 @@ namespace LearningApp.DiceMenu
 {
     class DiceMenuGame
     {
-        static void Main() 
+        static void MainDM() 
         {
             //GameController gameController = new GameController();
             //gameController.StartGame();
