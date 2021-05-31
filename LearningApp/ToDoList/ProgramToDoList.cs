@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LearningApp.ToDoList.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,19 +11,33 @@ namespace LearningApp.ToDoList
     {
         static void Main() 
         {
-            TaskList taskList = new TaskList();
+            //TaskList taskList = new TaskList();
 
-            //taskList.Add("Dishes", "Need to finish dishes after dinner.");
+            ////taskList.Add("Dishes", "Need to finish dishes after dinner.");
 
-            for (int i = 0; i < 2; i++)
-            {
-                taskList.NewTaskItem();
-            }
-            
-            
-            
-            //taskList.NewTaskItem();
-            taskList.DisplayList();
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    taskList.AddNewTaskItem();
+            //}
+
+            ////taskList.NewTaskItem();
+            //taskList.DisplayList();
+
+            //taskList.RemoveTaskItem(1);
+
+            //taskList.DisplayList();
+
+            StartWindow startWindow = new StartWindow();
+
+            startWindow.Render();
+            Console.ReadKey();
+            Console.Clear();
+
+            AddItemWindow addItemWindow = new AddItemWindow();
+
+            addItemWindow.Render();
+            Console.ReadKey();
+
         }
 
     }

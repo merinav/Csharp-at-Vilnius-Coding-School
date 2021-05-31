@@ -38,24 +38,47 @@ namespace LearningApp.ToDoList
             }
         }
 
-        public void NewTaskItem()
+        public void AddNewTaskItem()
         {
             Console.Write("Enter topic: ");
             string topic = Console.ReadLine();
-            //Console.WriteLine(topic);
-            //Console.WriteLine();
-
+           
             Console.Write("Enter task: ");
             string task = Console.ReadLine();
-            //Console.WriteLine(task);
             Console.WriteLine();
-
-            //Console.Write("Enter deadline: ");
-            //string task = Console.ReadLine();
-            ////Console.WriteLine(task);
-            //Console.WriteLine();
 
             this.Add(topic, task);
         }
+
+        public void RemoveTaskItem(int id) 
+        {
+            ListOfTasks.RemoveAt(id);
+        }
+
+        public string GetTask(int id)
+        {
+            var result = from t in ListOfTasks
+                          where t.Id == id
+                          select t.Task;
+
+            List<string> list = new List<string>();
+            list = result.ToList();
+
+            var firstItem = list.ElementAt(0);
+
+            return firstItem;
+        }
+
+        public List<string> GetAllTasks() 
+        {
+            var result = from t in ListOfTasks
+                         select t.Task;
+
+            List<string> list = new List<string>();
+            list = result.ToList();
+
+            return list;
+        }
+
     }
 }
