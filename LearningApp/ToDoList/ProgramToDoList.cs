@@ -1,4 +1,5 @@
-﻿using LearningApp.ToDoList.Windows;
+﻿using LearningApp.ToDoList.Controllers;
+using LearningApp.ToDoList.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace LearningApp.ToDoList
     {
         static void Main() 
         {
-            //TaskList taskList = new TaskList();
+
 
             ////taskList.Add("Dishes", "Need to finish dishes after dinner.");
 
@@ -26,18 +27,12 @@ namespace LearningApp.ToDoList
             //taskList.RemoveTaskItem(1);
 
             //taskList.DisplayList();
+            TaskList taskList = new TaskList();
 
-            StartWindow startWindow = new StartWindow();
 
-            startWindow.Render();
-            Console.ReadKey();
-            Console.Clear();
+            WindowController windowController = new WindowController();
 
-            AddItemWindow addItemWindow = new AddItemWindow();
-
-            addItemWindow.Render();
-            Console.ReadKey();
-
+            windowController.ShowStartWindow();
         }
 
     }

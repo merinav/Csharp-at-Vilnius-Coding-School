@@ -8,25 +8,25 @@ namespace LearningApp.ToDoList
 {
      class TaskItem
     {
-        public int Id { get; set; }
-        public string TaskTopic { get; set; }
+        //public int Id { get; set; }
+        //public string TaskTopic { get; set; }
         public string Task { get; set; }
-        public bool IsCompleted { get; set; }
+        //public bool IsCompleted { get; set; }
 
         public TaskItem() { }
 
-        public TaskItem(string topic, string task)
+        public TaskItem(string task)
         {
-            TaskTopic = topic;
+            //TaskTopic = topic;
             Task = task;
-            IsCompleted = false;
+            //IsCompleted = false;
         }
-        public TaskItem(int id, string topic, string task)
-        {
-            Id = id;
-            TaskTopic = topic;
-            Task = task;
-            IsCompleted = false;
-        }
+        //public TaskItem(string task)
+        //{
+        //    //Id = id;
+        //    //TaskTopic = topic;
+        //    Task = task;
+        //    //IsCompleted = false;
+        //}
     }
 }
