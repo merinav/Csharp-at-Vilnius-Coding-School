@@ -13,24 +13,20 @@ namespace LearningApp.ToDoList.Windows
 
         public AddItemWindow() : base(0, 0, 120, 30, "")
         {
-            titleTextLine = new TextLine(10, 5, 100, "Enter your item");
+            titleTextLine = new TextLine(5, 3, 18, "Enter your item:");
 
-            ConfirmItemButton = new Button(5, 15, 18, 5, "Confirm your item");
-
-            
+            AddItemButton = new Button(5, 15, 18, 5, "Add Item");
         }
-        //properties
-        public Button ConfirmItemButton { get; set; }
+        public Button AddItemButton { get; set; }
         
-        //methods
         public override void Render()
         {
             base.Render();
 
             titleTextLine.Render();
 
-            ConfirmItemButton.Render();
-           
+            AddItemButton.Render();
+            
             Console.SetCursorPosition(5, 10);
         }
 

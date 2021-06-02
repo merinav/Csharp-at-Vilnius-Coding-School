@@ -11,11 +11,13 @@ namespace LearningApp.ToDoList.Controllers
     {
         private StartWindow startWindow;
         private AddItemWindow addItemWindow;
+        private ShowAllWindow showAllWindow;
 
         public WindowController()
         {
             startWindow = new StartWindow();
             addItemWindow = new AddItemWindow();
+            showAllWindow = new ShowAllWindow();
         }
 
         //public WindowType CurrentActiveWindow { get; set; }
@@ -30,6 +32,12 @@ namespace LearningApp.ToDoList.Controllers
         {
             //CurrentActiveWindow = WindowType.PlayerSelection;
             addItemWindow.Render();
+        }
+
+        public void ShowShowAllWindow()
+        {
+            //CurrentActiveWindow = WindowType.MainMenu;
+            showAllWindow.Render();
         }
     }
 }

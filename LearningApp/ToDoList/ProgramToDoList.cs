@@ -33,6 +33,12 @@ namespace LearningApp.ToDoList
             WindowController windowController = new WindowController();
 
             windowController.ShowStartWindow();
+            Console.ReadKey();
+            Console.Clear();
+            windowController.ShowAddItemWindow();
+            Console.ReadKey();
+            Console.Clear();
+            windowController.ShowShowAllWindow();
         }
 
     }
