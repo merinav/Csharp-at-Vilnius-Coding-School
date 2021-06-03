@@ -13,11 +13,12 @@ namespace LearningApp.ToDoList.Windows
 
         public StartWindow() : base(0, 0, 120, 30, "")
         {
-            titleTextLine = new TextLine(5, 3, 100, "TO DO LIST");
+            titleTextLine = new TextLine(5, 3, 18, "TO DO LIST");
 
-            AddItemButton = new Button(5, 13, 18, 5, "Add Item");
+            AddItemButton = new Button(5, 15, 18, 5, "Add Item");
+            AddItemButton.SetActive();
 
-            ShowAllItemsButton = new Button(70, 13, 18, 5, "Show All Items");
+            ShowAllItemsButton = new Button(30, 15, 18, 5, "Show All Items");
 
             List<Button> ButtonList = new List<Button> { AddItemButton, ShowAllItemsButton };
         }

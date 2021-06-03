@@ -29,16 +29,19 @@ namespace LearningApp.ToDoList
             //taskList.DisplayList();
             TaskList taskList = new TaskList();
 
-
             WindowController windowController = new WindowController();
 
+            InputReader inputReader = new InputReader();
+
             windowController.ShowStartWindow();
-            Console.ReadKey();
-            Console.Clear();
-            windowController.ShowAddItemWindow();
-            Console.ReadKey();
-            Console.Clear();
-            windowController.ShowShowAllWindow();
+            inputReader.StartHandlingInput();
+
+            //Console.ReadKey();
+            //Console.Clear();
+            //windowController.ShowAddItemWindow();
+            //Console.ReadKey();
+            //Console.Clear();
+            //windowController.ShowShowAllWindow();
         }
 
     }

@@ -14,17 +14,17 @@ namespace LearningApp.ToDoList.Windows
 
         public ShowAllWindow() : base(0, 0, 120, 30, "")
         {
-            titleTextLine = new TextLine(5, 3, 100, "ALL ITEMS ON YOUR TO DO LIST");
+            titleTextLine = new TextLine(5, 3, 18, "ALL ITEMS ON YOUR TO DO LIST");
 
-            AddItemButton = new Button(30, 13, 18, 5, "Add Item");
+            AddItemButton = new Button(5, 15, 18, 5, "Add Item");
 
-            ShowAllItemsButton = new Button(70, 13, 18, 5, "Show All Items");
+            GoToMainButton = new Button(30, 15, 18, 5, "Go To Main Window");
 
-            List<Button> ButtonList = new List<Button> { AddItemButton, ShowAllItemsButton };
+            List<Button> ButtonList = new List<Button> { AddItemButton, GoToMainButton };
         }
         //properties
         public Button AddItemButton { get; set; }
-        public Button ShowAllItemsButton { get; set; }
+        public Button GoToMainButton { get; set; }
 
         public List<Button> ButtonList { get; set; }
 
@@ -35,7 +35,7 @@ namespace LearningApp.ToDoList.Windows
             titleTextLine.Render();
 
             AddItemButton.Render();
-            ShowAllItemsButton.Render();
+            GoToMainButton.Render();
 
             Console.SetCursorPosition(5, 10);
         }

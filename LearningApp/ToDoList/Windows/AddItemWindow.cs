@@ -15,9 +15,9 @@ namespace LearningApp.ToDoList.Windows
         {
             titleTextLine = new TextLine(5, 3, 18, "Enter your item:");
 
-            AddItemButton = new Button(5, 15, 18, 5, "Add Item");
+            ConfirmButton = new Button(5, 15, 18, 5, "Confirm Item");
         }
-        public Button AddItemButton { get; set; }
+        public Button ConfirmButton { get; set; }
         
         public override void Render()
         {
@@ -25,7 +25,7 @@ namespace LearningApp.ToDoList.Windows
 
             titleTextLine.Render();
 
-            AddItemButton.Render();
+            ConfirmButton.Render();
             
             Console.SetCursorPosition(5, 10);
         }
