@@ -16,6 +16,7 @@ namespace LearningApp.ToDoList.Windows
             titleTextLine = new TextLine(5, 3, 18, "Enter your item:");
 
             ConfirmButton = new Button(5, 15, 18, 5, "Confirm Item");
+            ConfirmButton.SetActive();
         }
         public Button ConfirmButton { get; set; }
         

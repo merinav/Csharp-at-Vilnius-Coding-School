@@ -30,38 +30,68 @@ namespace LearningApp.ToDoList.Controllers
                     {
                         case Constants.WindowType.StartWindow:
                             
-                            switch (key.Key)
+                             switch (key.Key)
                             {
-                                
                                 case ConsoleKey.LeftArrow:
-                                    windowController.SetNotActiveStartWindowButton(1);
-                                    windowController.SetActiveStartWindowButton(0);
-                                    break;
-                                
+                                    windowController.SetAddItemButtonStart(true);
+                                    break;                                
                                 case ConsoleKey.RightArrow:
-                                    windowController.SetNotActiveStartWindowButton(0);
-                                    windowController.SetActiveStartWindowButton(1);
+                                    windowController.SetAddItemButtonStart(false);
                                     break;
-
                                 case ConsoleKey.Enter:
                                     if (windowController.AddItemButtonActive)
                                     {
+                                        Console.Clear();
                                         windowController.ShowAddItemWindow();
                                     }
                                     else if (windowController.ShowAllButtonActive)
                                     {
+                                        Console.Clear();
                                         windowController.ShowShowAllWindow();
                                     }
                                     break;
-
-
                                 default:
                                     break;
                             }
                             break;
-                        case Constants.WindowType.AddItemWindow:
                             break;
+
+                        case Constants.WindowType.AddItemWindow:
+                            switch (key.Key)
+                            {
+                                case ConsoleKey.Enter:
+                                    windowController.ShowShowAllWindow();
+                                    break;
+                                default:
+                                    break;
+                            }
+                            break;
+
                         case Constants.WindowType.ShowAllItemsWindow:
+
+                            switch (key.Key)
+                            {
+                                case ConsoleKey.LeftArrow:
+                                    windowController.SetAddItemsButtonShowAll(true);
+                                    break;
+                                case ConsoleKey.RightArrow:
+                                    windowController.SetAddItemsButtonShowAll(false);
+                                    break;
+                                case ConsoleKey.Enter:
+                                    if (windowController.AddItemButtonActive)
+                                    {
+                                        Console.Clear();
+                                        windowController.ShowAddItemWindow();
+                                    }
+                                    else if (windowController.GoToMainButtonActive)
+                                    {
+                                        Console.Clear();
+                                        windowController.ShowStartWindow();
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
                             break;
                         default:
                             break;

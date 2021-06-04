@@ -26,6 +26,8 @@ namespace LearningApp.ToDoList.Controllers
 
         public bool AddItemButtonActive { get; set; }
 
+        public bool GoToMainButtonActive { get; set; }
+
         public void ShowStartWindow()
         {
             CurrentActiveWindow = WindowType.StartWindow;
@@ -44,25 +46,42 @@ namespace LearningApp.ToDoList.Controllers
             showAllWindow.Render();
         }
 
-        public void SetNotActiveStartWindowButton(int id)
+        public void SetAddItemButtonStart(bool set)
         {
-            startWindow.ButtonList.ElementAt(id).SetNotActive();
-        }
-
-        public void SetActiveStartWindowButton(int id)
-        {
-            startWindow.ButtonList.ElementAt(id).SetActive();
-            startWindow.Render();
-            if (id == 0)
+            if (set)
             {
+                startWindow.AddItemButton.SetActive();
+                startWindow.ShowAllItemsButton.SetNotActive();
                 AddItemButtonActive = true;
+                ShowAllButtonActive = false;
             }
             else
             {
+                startWindow.AddItemButton.SetNotActive();
+                startWindow.ShowAllItemsButton.SetActive();
                 ShowAllButtonActive = true;
+                AddItemButtonActive = false;
+            }   
+        }
+
+        public void SetAddItemsButtonShowAll(bool set)
+        {
+            if (set)
+            {
+                showAllWindow.AddItemButton.SetActive();
+                showAllWindow.GoToMainButton.SetNotActive();
+                AddItemButtonActive = true;
+                GoToMainButtonActive = false;
+            }
+            else
+            {
+                showAllWindow.AddItemButton.SetNotActive();
+                showAllWindow.GoToMainButton.SetActive();
+                GoToMainButtonActive = true;
+                AddItemButtonActive = false;
             }
         }
 
-        
+
     }
 }

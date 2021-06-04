@@ -16,7 +16,7 @@ namespace LearningApp.ToDoList.Windows
             titleTextLine = new TextLine(5, 3, 18, "TO DO LIST");
 
             AddItemButton = new Button(5, 15, 18, 5, "Add Item");
-            AddItemButton.SetActive();
+            //AddItemButton.SetActive();
 
             ShowAllItemsButton = new Button(30, 15, 18, 5, "Show All Items");
 
@@ -40,9 +40,10 @@ namespace LearningApp.ToDoList.Windows
             Console.SetCursorPosition(0, 0);
         }
 
-        public void SetActive(Button button)
+        public void SetActive(int id)
         {
-            button.SetActive();
+            Button buttonToSetActive = ButtonList.ElementAt(id);
+            buttonToSetActive.SetActive();
         }
 
         public void SetNotActive(Button button)
