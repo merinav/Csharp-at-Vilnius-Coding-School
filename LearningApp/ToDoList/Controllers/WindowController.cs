@@ -19,6 +19,7 @@ namespace LearningApp.ToDoList.Controllers
             startWindow = new StartWindow();
             addItemWindow = new AddItemWindow();
             showAllWindow = new ShowAllWindow();
+            TaskList = new TaskList();
         }
 
         public WindowType CurrentActiveWindow { get; set; }
@@ -27,6 +28,8 @@ namespace LearningApp.ToDoList.Controllers
         public bool AddItemButtonActive { get; set; }
 
         public bool GoToMainButtonActive { get; set; }
+
+        public TaskList TaskList { get; set; }
 
         public void ShowStartWindow()
         {
@@ -44,6 +47,7 @@ namespace LearningApp.ToDoList.Controllers
         {
             CurrentActiveWindow = WindowType.ShowAllItemsWindow;
             showAllWindow.Render();
+
         }
 
         public void SetAddItemButtonStart(bool set)
@@ -82,6 +86,15 @@ namespace LearningApp.ToDoList.Controllers
             }
         }
 
+        public void CollectData(string data)
+        {
+            
+            TaskList.Add(data);
+        }
 
+        public void DisplayItems()
+        {
+            TaskList.DisplayList();
+        }
     }
 }

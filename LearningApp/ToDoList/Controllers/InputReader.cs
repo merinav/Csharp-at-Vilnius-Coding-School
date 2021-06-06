@@ -19,7 +19,7 @@ namespace LearningApp.ToDoList.Controllers
         public void StartHandlingInput()
         {
             windowController.CurrentActiveWindow = Constants.WindowType.StartWindow;
-            
+            bool running = true;
             do
             {
                 while (Console.KeyAvailable)
@@ -50,17 +50,27 @@ namespace LearningApp.ToDoList.Controllers
                                         windowController.ShowShowAllWindow();
                                     }
                                     break;
+                                case ConsoleKey.Escape:
+                                    Console.Clear();
+                                    running = false;
+                                    break;
                                 default:
                                     break;
                             }
                             break;
-                            break;
 
                         case Constants.WindowType.AddItemWindow:
+
+                            windowController.CollectData(Convert.ToString(Console.Read()));
                             switch (key.Key)
                             {
                                 case ConsoleKey.Enter:
+                                    Console.Clear();
                                     windowController.ShowShowAllWindow();
+                                    break;
+                                case ConsoleKey.Escape:
+                                    Console.Clear();
+                                    running = false;
                                     break;
                                 default:
                                     break;
@@ -69,6 +79,7 @@ namespace LearningApp.ToDoList.Controllers
 
                         case Constants.WindowType.ShowAllItemsWindow:
 
+                            windowController.DisplayItems();
                             switch (key.Key)
                             {
                                 case ConsoleKey.LeftArrow:
@@ -89,6 +100,10 @@ namespace LearningApp.ToDoList.Controllers
                                         windowController.ShowStartWindow();
                                     }
                                     break;
+                                case ConsoleKey.Escape:
+                                    Console.Clear();
+                                    running = false;
+                                    break;
                                 default:
                                     break;
                             }
@@ -96,9 +111,8 @@ namespace LearningApp.ToDoList.Controllers
                         default:
                             break;
                     }
-
                 }
-            } while (true);
+            } while (running);
 
 
 
