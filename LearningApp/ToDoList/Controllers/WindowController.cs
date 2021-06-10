@@ -29,6 +29,8 @@ namespace LearningApp.ToDoList.Controllers
 
         public bool GoToMainButtonActive { get; set; }
 
+        public bool ConfirmButtonActive { get; set; }
+
         public TaskList TaskList { get; set; }
 
         public void ShowStartWindow()
@@ -95,6 +97,12 @@ namespace LearningApp.ToDoList.Controllers
         public void DisplayItems()
         {
             TaskList.DisplayList();
+        }
+
+        public void SetConfirmButton()
+        {
+                addItemWindow.ConfirmButton.SetActive();
+                ConfirmButtonActive = true;
         }
     }
 }

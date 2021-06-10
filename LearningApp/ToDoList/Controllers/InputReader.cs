@@ -60,10 +60,16 @@ namespace LearningApp.ToDoList.Controllers
                             break;
 
                         case Constants.WindowType.AddItemWindow:
-
-                            windowController.CollectData(Convert.ToString(Console.Read()));
+                            Console.SetCursorPosition(5, 10);
+                            windowController.CollectData(Console.ReadLine());
                             switch (key.Key)
                             {
+                                case ConsoleKey.LeftArrow:
+                                    windowController.SetConfirmButton();
+                                    break;
+                                case ConsoleKey.RightArrow:
+                                    windowController.SetConfirmButton();
+                                    break;
                                 case ConsoleKey.Enter:
                                     Console.Clear();
                                     windowController.ShowShowAllWindow();
@@ -78,7 +84,7 @@ namespace LearningApp.ToDoList.Controllers
                             break;
 
                         case Constants.WindowType.ShowAllItemsWindow:
-
+                            //Console.Clear();
                             windowController.DisplayItems();
                             switch (key.Key)
                             {

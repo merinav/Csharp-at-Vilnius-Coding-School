@@ -16,19 +16,18 @@ namespace LearningApp.ToDoList
         }
 
         public void Add(string task)
-        {
-            int TaskId = ListOfTasks.Count();
-            TaskId++;
-
+        { 
             ListOfTasks.Add(new TaskItem(task));
         }
 
         public void DisplayList()
         {
-            Console.WriteLine("No | Task ");
-            Console.WriteLine();
+            //Console.SetCursorPosition(5, 10);
+            //Console.WriteLine("No | Task ");
+            //Console.WriteLine();
             foreach (var t in ListOfTasks)
             {
+                Console.SetCursorPosition(5, 10);
                 Console.WriteLine((ListOfTasks.IndexOf(t)+1) + $" {t.Task}"); 
             }
         }
